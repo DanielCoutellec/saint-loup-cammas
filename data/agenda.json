@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "concours-petanque-aout-2026",
+    "date": "2026-08-29",
+    "jour": "29",
+    "mois": "AOÛT",
+    "titre": "Concours de pétanque",
+    "description": "Week-end des 29 et 30 août.",
+    "contenu": "Le concours de pétanque se déroulera durant le week-end des 29 et 30 août à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "forum-associations-2026",
+    "date": "2026-09-05",
+    "jour": "05",
+    "mois": "SEPT.",
+    "titre": "Forum des Associations",
+    "description": "Organisé par la mairie.",
+    "contenu": "Le Forum des Associations permet de découvrir les associations et activités proposées à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "fete-locale-2026",
+    "date": "2026-09-18",
+    "jour": "18",
+    "mois": "SEPT.",
+    "titre": "Fête locale",
+    "description": "Du 18 au 20 septembre, organisée par le Comité des Fêtes.",
+    "contenu": "La fête locale de Saint-Loup-Cammas se déroulera du 18 au 20 septembre."
+  },
+  {
+    "slug": "vide-grenier-2026",
+    "date": "2026-10-11",
+    "jour": "11",
+    "mois": "OCT.",
+    "titre": "Vide-grenier",
+    "description": "Organisé par Anim Saint-Loup.",
+    "contenu": "Le vide-grenier est organisé par Anim Saint-Loup."
+  },
+  {
+    "slug": "zumba-2026",
+    "date": "2026-10-17",
+    "jour": "17",
+    "mois": "OCT.",
+    "titre": "Master class Zumba",
+    "description": "Organisée par le Foyer Rural.",
+    "contenu": "Une Master class Zumba est organisée par le Foyer Rural."
+  },
+  {
+    "slug": "zinzins-bitume-2026",
+    "date": "2026-11-15",
+    "jour": "15",
+    "mois": "NOV.",
+    "titre": "Course des Zinzins du Bitume",
+    "description": "Course pédestre.",
+    "contenu": "La course des Zinzins du Bitume est un rendez-vous sportif organisé à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "gouter-noel-2026",
+    "date": "2026-12-05",
+    "jour": "05",
+    "mois": "DÉC.",
+    "titre": "Goûter de Noël",
+    "description": "Organisé par le Foyer Rural.",
+    "contenu": "Le goûter de Noël est organisé par le Foyer Rural."
+  },
+  {
+    "slug": "concert-noel-2026",
+    "date": "2026-12-12",
+    "jour": "12",
+    "mois": "DÉC.",
+    "titre": "Concert de Noël",
+    "description": "Organisé par la Gerbe d'Or.",
+    "contenu": "Le concert de Noël est organisé par la Gerbe d'Or."
+  },
+  {
+    "slug": "loto-decembre-2026",
+    "date": "2026-12-19",
+    "jour": "19",
+    "mois": "DÉC.",
+    "titre": "Loto",
+    "description": "Organisé par le Club de Pétanque.",
+    "contenu": "Le loto est organisé par le Club de Pétanque."
+  }
+]

@@ -1,0 +1,263 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <!-- =====================================
+       EN-TÊTE
+  ====================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        Saint-Loup-Cammas
+      </span>
+
+      <h1>
+        Actualités
+      </h1>
+
+      <p>
+        Retrouvez les dernières informations,
+        événements et actualités de la commune.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ACTUALITÉS
+  ====================================== -->
+
+  <section class="section news-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          À la une
+        </span>
+
+        <h2>
+          Les dernières actualités
+        </h2>
+
+        <p>
+          Vie municipale, événements, travaux et informations pratiques :
+          suivez l'actualité de Saint-Loup-Cammas.
+        </p>
+
+      </div>
+
+
+      <div class="news-grid">
+
+        <% actualites.forEach(actualite => { %>
+
+          <article class="news-card">
+
+            <div class="news-placeholder">
+              <%= actualite.icone %>
+            </div>
+
+
+            <div class="news-content">
+
+              <span class="news-date">
+                <%= actualite.categorie %>
+              </span>
+
+              <h3>
+                <%= actualite.titre %>
+              </h3>
+
+              <p>
+                <%= actualite.resume %>
+              </p>
+
+              <a href="/actualites/<%= actualite.slug %>">
+                Lire la suite →
+              </a>
+
+            </div>
+
+          </article>
+
+        <% }) %>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       AUTRES INFORMATIONS
+  ====================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          À consulter
+        </span>
+
+        <h2>
+          Informations de la commune
+        </h2>
+
+        <p>
+          Retrouvez également l'agenda,
+          les publications et les informations pratiques.
+        </p>
+
+      </div>
+
+
+      <div class="demarches-grid">
+
+
+        <!-- AGENDA -->
+
+        <a href="/agenda" class="demarche-card">
+
+          <div class="demarche-icon">
+            📆
+          </div>
+
+          <div>
+
+            <h3>
+              Agenda
+            </h3>
+
+            <p>
+              Consultez les prochains événements
+              et manifestations de Saint-Loup-Cammas.
+            </p>
+
+            <span>
+              Voir l'agenda →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- PUBLICATIONS -->
+
+        <a href="/publications" class="demarche-card">
+
+          <div class="demarche-icon">
+            📰
+          </div>
+
+          <div>
+
+            <h3>
+              Publications
+            </h3>
+
+            <p>
+              Retrouvez les bulletins municipaux
+              et les publications de la commune.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- TRAVAUX -->
+
+        <a href="/travaux" class="demarche-card">
+
+          <div class="demarche-icon">
+            🚧
+          </div>
+
+          <div>
+
+            <h3>
+              Travaux & informations
+            </h3>
+
+            <p>
+              Retrouvez les travaux, perturbations
+              et informations pratiques concernant la commune.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
+
+  <section class="demarches-info">
+
+    <div class="container demarches-info-grid">
+
+      <div>
+
+        <span class="section-eyebrow light">
+          Information municipale
+        </span>
+
+        <h2>
+          Restez informé
+        </h2>
+
+        <p>
+          Retrouvez régulièrement sur cette page
+          les informations et communications
+          de la mairie de Saint-Loup-Cammas.
+        </p>
+
+      </div>
+
+
+      <div class="demarches-contact">
+
+        <strong>
+          Mairie de Saint-Loup-Cammas
+        </strong>
+
+        <a href="tel:0534272850">
+          05 34 27 28 50
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<%- include("partials/footer") %>

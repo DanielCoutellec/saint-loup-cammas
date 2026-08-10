@@ -1,0 +1,69 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        Agenda
+      </span>
+
+      <h1>
+        <%= evenement.titre %>
+      </h1>
+
+      <p>
+        <%= evenement.description %>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <article class="actualite-detail">
+
+        <div class="agenda-date">
+
+          <strong>
+            <%= evenement.jour %>
+          </strong>
+
+          <span>
+            <%= evenement.mois %>
+          </span>
+
+        </div>
+
+
+        <div class="actualite-detail-content">
+
+          <h2>
+            <%= evenement.titre %>
+          </h2>
+
+          <p>
+            <%= evenement.contenu %>
+          </p>
+
+          <a href="/agenda" class="text-link">
+            ← Retour à l'agenda
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+<%- include("partials/footer") %>

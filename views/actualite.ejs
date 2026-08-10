@@ -1,0 +1,54 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        <%= actualite.categorie %>
+      </span>
+
+      <h1>
+        <%= actualite.titre %>
+      </h1>
+
+      <p>
+        <%= actualite.resume %>
+      </p>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <article class="actualite-detail">
+
+        <div class="actualite-detail-icon">
+          <%= actualite.icone %>
+        </div>
+
+        <div class="actualite-detail-content">
+
+          <p>
+            <%= actualite.contenu %>
+          </p>
+
+          <a href="/actualites" class="text-link">
+            ← Retour aux actualités
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+<%- include("partials/footer") %>

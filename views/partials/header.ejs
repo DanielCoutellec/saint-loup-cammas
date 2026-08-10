@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Site officiel de la commune de Saint-Loup-Cammas"
+  >
+
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+
+  <!-- =====================================
+       BARRE SUPÉRIEURE
+  ====================================== -->
+
+  <div class="topbar">
+
+    <div class="container topbar-inner">
+
+      <span>
+        Mairie de Saint-Loup-Cammas
+      </span>
+
+      <div class="topbar-links">
+
+        <a href="tel:0534272850">
+          05 34 27 28 50
+        </a>
+
+        <a href="/contact">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header class="main-header">
+
+    <div class="container header-inner">
+
+
+      <!-- LOGO -->
+
+      <a href="/" class="brand">
+
+        <div class="brand-logo">
+
+          <img
+            src="/images/logo.jpg"
+            alt="Logo de Saint-Loup-Cammas"
+          >
+
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            Saint-Loup-Cammas
+          </strong>
+
+          <span>
+            Site officiel de la commune
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- BOUTON MOBILE -->
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        onclick="
+          const nav = document.querySelector('.main-nav');
+          nav.classList.toggle('open');
+          this.setAttribute(
+            'aria-expanded',
+            nav.classList.contains('open')
+          );
+        "
+      >
+        ☰
+      </button>
+
+
+      <!-- NAVIGATION -->
+
+      <nav class="main-nav">
+
+
+        <!-- ACCUEIL -->
+
+        <a href="/">
+          Accueil
+        </a>
+
+
+        <!-- LA MAIRIE -->
+
+        <div class="nav-item">
+
+          <a href="/maire-elus" class="nav-link">
+            La mairie
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/maire-elus">
+              Le maire et les élus
+            </a>
+
+            <a href="/conseil-municipal">
+              Conseil municipal
+            </a>
+
+            <a href="/services-municipaux">
+              Services municipaux
+            </a>
+
+            <a href="/publications">
+              Publications
+            </a>
+
+            <a href="/marches-publics">
+              Marchés publics
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- DÉMARCHES -->
+
+        <div class="nav-item">
+
+          <a href="/demarches" class="nav-link">
+            Démarches
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/etat-civil">
+              État civil
+            </a>
+
+            <a href="/formalites">
+              Formalités administratives
+            </a>
+
+            <a href="/elections">
+              Élections
+            </a>
+
+            <a href="/urbanisme">
+              Urbanisme
+            </a>
+
+            <a href="/cimetiere">
+              Cimetière
+            </a>
+
+            <a href="/demarches">
+              Toutes les démarches
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENFANCE -->
+
+        <div class="nav-item">
+
+          <a href="/enfance" class="nav-link">
+            Enfance
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/ecole">
+              École
+            </a>
+
+            <a href="/restauration-scolaire">
+              Restauration scolaire
+            </a>
+
+            <a href="/creche">
+              Crèche
+            </a>
+
+            <a href="/accueils-loisirs">
+              Accueils de loisirs
+            </a>
+
+            <a href="/conseil-enfants">
+              Conseil municipal des enfants
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIE LOCALE -->
+
+        <div class="nav-item">
+
+          <a href="/vie-locale" class="nav-link">
+            Vie locale
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/associations">
+              Associations
+            </a>
+
+            <a href="/transports">
+              Transports
+            </a>
+
+            <a href="/salles-municipales">
+              Salles municipales
+            </a>
+
+            <a href="/commerces-services">
+              Commerces & services
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTUALITÉS -->
+
+        <div class="nav-item">
+
+          <a href="/actualites" class="nav-link">
+            Actualités
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/actualites">
+              Actualités
+            </a>
+
+            <a href="/agenda">
+              Agenda
+            </a>
+
+            <a href="/travaux">
+              Travaux & informations
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </nav>
+
+    </div>
+
+  </header>

@@ -1,0 +1,17 @@
+{
+  "name": "mairie-saint-loup-cammas",
+  "version": "1.0.0",
+  "description": "Site de la commune de Saint-Loup-Cammas",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

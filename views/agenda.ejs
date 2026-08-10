@@ -1,0 +1,162 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <!-- =====================================
+       EN-TÊTE
+  ====================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        Sortir à Saint-Loup-Cammas
+      </span>
+
+      <h1>
+        Agenda
+      </h1>
+
+      <p>
+        Retrouvez les prochains rendez-vous
+        et manifestations de la commune.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ÉVÉNEMENTS
+  ====================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          À vos agendas
+        </span>
+
+        <h2>
+          Prochains événements
+        </h2>
+
+        <p>
+          Découvrez les prochains événements,
+          manifestations et rendez-vous organisés
+          à Saint-Loup-Cammas.
+        </p>
+
+      </div>
+
+
+      <div class="agenda-page-list">
+
+        <% agenda.forEach(event => { %>
+
+          <a
+            class="agenda-page-item"
+            href="/agenda/<%= event.slug %>"
+          >
+
+            <!-- DATE -->
+
+            <div class="agenda-date">
+
+              <strong>
+                <%= event.jour %>
+              </strong>
+
+              <span>
+                <%= event.mois %>
+              </span>
+
+            </div>
+
+
+            <!-- CONTENU -->
+
+            <div class="agenda-page-content">
+
+              <h3>
+                <%= event.titre %>
+              </h3>
+
+              <p>
+                <%= event.description %>
+              </p>
+
+              <!--
+                IMPORTANT :
+                ceci est volontairement un SPAN
+                et non un deuxième lien <a>
+              -->
+
+              <span class="agenda-more">
+                Voir l'événement →
+              </span>
+
+            </div>
+
+          </a>
+
+        <% }) %>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       INFORMATIONS
+  ====================================== -->
+
+  <section class="demarches-info">
+
+    <div class="container demarches-info-grid">
+
+      <div>
+
+        <span class="section-eyebrow light">
+          Vie locale
+        </span>
+
+        <h2>
+          Les événements de la commune
+        </h2>
+
+        <p>
+          Retrouvez les manifestations,
+          rendez-vous associatifs et événements
+          organisés à Saint-Loup-Cammas.
+        </p>
+
+      </div>
+
+
+      <div class="demarches-contact">
+
+        <strong>
+          Mairie de Saint-Loup-Cammas
+        </strong>
+
+        <a href="tel:0534272850">
+          05 34 27 28 50
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<%- include("partials/footer") %>
