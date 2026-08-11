@@ -2,7 +2,10 @@
 
 <main>
 
+  <!-- EN-TÊTE DE L'ACTUALITÉ -->
+
   <section class="page-hero">
+
     <div class="container">
 
       <span class="section-eyebrow light">
@@ -18,20 +21,46 @@
       </p>
 
     </div>
+
   </section>
 
 
-  <section class="section">
+  <!-- CONTENU DE L'ACTUALITÉ -->
+
+  <section class="section actualite-detail">
 
     <div class="container">
 
-      <article class="actualite-detail">
+      <div class="actualite-detail-grid">
 
-        <div class="actualite-detail-icon">
-          <%= actualite.icone %>
-        </div>
+
+        <!-- IMAGE -->
+
+        <% if (actualite.image) { %>
+
+          <div class="actualite-detail-image">
+
+            <img
+              src="<%= actualite.image %>"
+              alt="<%= actualite.titre %>"
+            >
+
+          </div>
+
+        <% } %>
+
+
+        <!-- TEXTE -->
 
         <div class="actualite-detail-content">
+
+          <span class="section-eyebrow">
+            <%= actualite.categorie %>
+          </span>
+
+          <h2>
+            <%= actualite.titre %>
+          </h2>
 
           <p>
             <%= actualite.contenu %>
@@ -43,7 +72,8 @@
 
         </div>
 
-      </article>
+
+      </div>
 
     </div>
 

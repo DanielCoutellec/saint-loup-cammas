@@ -2,11 +2,39 @@
 
 <main>
 
-  <!-- =====================================
-       HERO
-  ====================================== -->
+  <!-- HERO -->
 
-  <section class="hero">
+  <section class="hero hero-slider">
+
+    <div class="hero-slides">
+
+      <div
+        class="hero-slide active"
+        style="background-image: url('/images/hero/mairie.jpg');"
+      ></div>
+
+      <div
+        class="hero-slide"
+        style="background-image: url('/images/hero/mairie2.jpg');"
+      ></div>
+
+      <div
+        class="hero-slide"
+        style="background-image: url('/images/hero/mairie3.jpg');"
+      ></div>
+
+      <div
+        class="hero-slide"
+        style="background-image: url('/images/hero/courses.jpg');"
+      ></div>
+
+      <div
+        class="hero-slide"
+        style="background-image: url('/images/hero/repas.jpg');"
+      ></div>
+
+    </div>
+
 
     <div class="container hero-content">
 
@@ -37,12 +65,35 @@
 
     </div>
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+
+        const slides = document.querySelectorAll(".hero-slide");
+
+        if (!slides.length) {
+          return;
+        }
+
+        let current = 0;
+
+        setInterval(() => {
+
+          slides[current].classList.remove("active");
+
+          current = (current + 1) % slides.length;
+
+          slides[current].classList.add("active");
+
+        }, 3000);
+
+      });
+    </script>
+
   </section>
 
 
-  <!-- =====================================
-       INFORMATION MAIRIE
-  ====================================== -->
+  <!-- INFORMATION MAIRIE -->
 
   <section class="alert-section">
 
@@ -50,7 +101,10 @@
 
       <% if (infoMairie) { %>
 
-        <a href="/actualites" class="municipal-alert">
+        <a
+          href="/actualites/<%= infoMairie.slug %>"
+          class="municipal-alert"
+        >
 
           <div class="alert-icon">
             !
@@ -104,11 +158,9 @@
   </section>
 
 
-  <!-- =====================================
-       ACCÈS RAPIDES
-  ====================================== -->
+  <!-- ACCÈS RAPIDES -->
 
-  <section class="quick-access section" id="demarches">
+  <section class="quick-access section">
 
     <div class="container">
 
@@ -131,7 +183,6 @@
 
 
       <div class="quick-grid">
-
 
         <a href="/demarches" class="quick-card">
 
@@ -201,8 +252,7 @@
         </a>
 
 
-        <a href="/associations" class=Factualites
-		"quick-card">
+        <a href="/associations" class="quick-card">
 
           <span class="quick-icon">
             👥
@@ -242,81 +292,87 @@
   </section>
 
 
-  <!-- =====================================
-       ACTUALITÉS
-  ====================================== -->
+  <!-- ACTUALITÉS -->
 
-  <section class="news-section section" id="actualites">
+  <section class="news-section section">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-heading section-heading-row">
+      <div class="section-heading section-heading-row">
 
-      <div>
+        <div>
 
-        <span class="section-eyebrow">
-          À la une
-        </span>
+          <span class="section-eyebrow">
+            À la une
+          </span>
 
-        <h2>
-          Actualités
-        </h2>
+          <h2>
+            Actualités
+          </h2>
+
+        </div>
+
+        <a href="/actualites" class="text-link">
+          Toutes les actualités →
+        </a>
 
       </div>
 
-      <a href="/actualites" class="text-link">
-        Toutes les actualités →
-      </a>
+
+      <div class="news-grid">
+
+        <% actualitesAccueil.forEach(actualite => { %>
+
+          <article class="news-card">
+
+            <% if (actualite.image) { %>
+
+              <div class="news-image">
+
+                <img
+                  src="<%= actualite.image %>"
+                  alt="<%= actualite.titre %>"
+                >
+
+              </div>
+
+            <% } %>
+
+
+            <div class="news-content">
+
+              <span class="news-date">
+                <%= actualite.categorie %>
+              </span>
+
+              <h3>
+                <%= actualite.titre %>
+              </h3>
+
+              <p>
+                <%= actualite.resume %>
+              </p>
+
+              <a href="/actualites/<%= actualite.slug %>">
+                En savoir plus →
+              </a>
+
+            </div>
+
+          </article>
+
+        <% }) %>
+
+      </div>
 
     </div>
 
-
-    <div class="news-grid">
-
-      <% actualitesAccueil.forEach(actualite => { %>
-
-        <article class="news-card">
-
-          <div class="news-placeholder">
-            <%= actualite.icone %>
-          </div>
-
-          <div class="news-content">
-
-            <span class="news-date">
-              <%= actualite.categorie %>
-            </span>
-
-            <h3>
-              <%= actualite.titre %>
-            </h3>
-
-            <p>
-              <%= actualite.resume %>
-            </p>
-
-            <a href="/actualites/<%= actualite.slug %>">
-              En savoir plus →
-            </a>
-
-          </div>
-
-        </article>
-
-      <% }) %>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-  <!-- =====================================
-       VIE LOCALE
-  ====================================== -->
+  <!-- VIE LOCALE -->
 
-  <section class="life-section section" id="vie-locale">
+  <section class="life-section section">
 
     <div class="container life-grid">
 
@@ -365,9 +421,7 @@
   </section>
 
 
-  <!-- =====================================
-       AGENDA
-  ====================================== -->
+  <!-- AGENDA -->
 
   <section class="agenda-section section">
 
@@ -396,70 +450,41 @@
 
       <div class="agenda-list">
 
-  <% agendaAccueil.forEach(event => { %>
+        <% agendaAccueil.forEach(event => { %>
 
-    <a href="/agenda" class="agenda-item">
+          <a
+            href="/agenda/<%= event.slug %>"
+            class="agenda-item"
+          >
 
-      <div class="agenda-date">
+            <div class="agenda-date">
 
-        <strong>
-          <%= event.jour %>
-        </strong>
+              <strong>
+                <%= event.jour %>
+              </strong>
 
-        <span>
-          <%= event.mois %>
-        </span>
+              <span>
+                <%= event.mois %>
+              </span>
 
-      </div>
-
-      <div>
-
-        <h3>
-          <%= event.titre %>
-        </h3>
-
-        <p>
-          <%= event.description %>
-        </p>
-
-      </div>
-
-    </a>
-
-  <% }) %>
-
-</div>
-
-        </a>
+            </div>
 
 
-        <a href="/agenda" class="agenda-item">
+            <div>
 
-          <div class="agenda-date">
+              <h3>
+                <%= event.titre %>
+              </h3>
 
-            <strong>
-              05
-            </strong>
+              <p>
+                <%= event.description %>
+              </p>
 
-            <span>
-              SEPT.
-            </span>
+            </div>
 
-          </div>
+          </a>
 
-          <div>
-
-            <h3>
-              Forum des associations
-            </h3>
-
-            <p>
-              Organisé par la mairie.
-            </p>
-
-          </div>
-
-        </a>
+        <% }) %>
 
       </div>
 
@@ -468,11 +493,9 @@
   </section>
 
 
-  <!-- =====================================
-       CONTACT
-  ====================================== -->
+  <!-- CONTACT -->
 
-  <section class="contact-section" id="contact">
+  <section class="contact-section">
 
     <div class="container contact-grid">
 

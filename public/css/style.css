@@ -1,11 +1,5 @@
 /* =========================================================
    SAINT-LOUP-CAMMAS
-   FEUILLE DE STYLE PRINCIPALE
-========================================================= */
-
-
-/* =========================================================
-   1. BASE
 ========================================================= */
 
 * {
@@ -46,9 +40,7 @@ select {
 }
 
 
-/* =========================================================
-   2. TOPBAR
-========================================================= */
+/* TOPBAR */
 
 .topbar {
   background: #17334b;
@@ -65,18 +57,11 @@ select {
 
 .topbar-links {
   display: flex;
-  align-items: center;
   gap: 24px;
 }
 
-.topbar a:hover {
-  text-decoration: underline;
-}
 
-
-/* =========================================================
-   3. HEADER
-========================================================= */
+/* HEADER */
 
 .main-header {
   position: relative;
@@ -96,1725 +81,6 @@ select {
 .brand {
   display: flex;
   align-items: center;
-  min-width: 0;
-  flex-shrink: 0;
-}
-
-.official-logo {
-  width: 360px;
-  height: auto;
-}
-
-
-/* =========================================================
-   4. NAVIGATION DESKTOP
-========================================================= */
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.main-nav > a,
-.nav-link {
-  position: relative;
-  min-height: 105px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  color: #1d2a35;
-  font-weight: 600;
-}
-
-.main-nav > a::after,
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 100%;
-  bottom: 25px;
-  height: 2px;
-  background: #9d493d;
-  transition: right 0.22s ease;
-}
-
-.main-nav > a:hover::after,
-.nav-item:hover > .nav-link::after {
-  right: 0;
-}
-
-.nav-item {
-  position: relative;
-  min-height: 105px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-link {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-
-/* =========================================================
-   5. SOUS-MENUS
-========================================================= */
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  display: none;
-  min-width: 245px;
-  padding: 10px 0;
-  background: #ffffff;
-  border-top: 3px solid #9d493d;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  z-index: 1200;
-}
-
-.nav-item:hover > .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 12px 20px;
-  color: #17334b;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background: #f5f7f8;
-  color: #9d493d;
-}
-
-
-/* =========================================================
-   6. BOUTON HAMBURGER
-========================================================= */
-
-.menu-toggle {
-  display: none;
-  border: 0;
-  background: transparent;
-  color: #17334b;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-
-/* =========================================================
-   7. HERO ACCUEIL
-========================================================= */
-
-.hero {
-  min-height: 540px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(16, 45, 67, 0.82) 0%,
-      rgba(16, 45, 67, 0.58) 48%,
-      rgba(16, 45, 67, 0.18) 100%
-    ),
-    url("/images/mairie.jpg") center / cover no-repeat;
-
-  color: #ffffff;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 80px 0;
-}
-
-.hero-kicker {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.hero h1 {
-  max-width: 900px;
-  margin: 15px 0 25px;
-  font-size: clamp(48px, 7vw, 82px);
-  line-height: 1;
-}
-
-.hero-intro {
-  max-width: 620px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.93);
-  font-size: 21px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: 35px;
-}
-
-
-/* =========================================================
-   8. BOUTONS
-========================================================= */
-
-.btn {
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 26px;
-  border-radius: 5px;
-  font-weight: 700;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: #a94e40;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: #8d3e34;
-}
-
-.btn-secondary {
-  background: #ffffff;
-  color: #17334b;
-}
-
-.btn-secondary:hover {
-  background: #f1f1f1;
-}
-
-.btn-light {
-  background: #ffffff;
-  color: #17334b;
-}
-
-.btn-outline-light {
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   9. BANDEAU INFORMATION MAIRIE
-========================================================= */
-
-.alert-section {
-  position: relative;
-  z-index: 10;
-  transform: translateY(-28px);
-}
-
-.municipal-alert {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 23px 28px;
-
-  background: #ffffff;
-  border-left: 4px solid #c95340;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.13);
-
-  color: inherit;
-}
-
-a.municipal-alert {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-a.municipal-alert:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.16);
-}
-
-.alert-icon {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  background: #c95340;
-  color: #ffffff;
-
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.alert-content {
-  flex: 1;
-}
-
-.municipal-alert strong {
-  display: block;
-  color: #17334b;
-  font-size: 17px;
-}
-
-.municipal-alert p {
-  margin: 5px 0 0;
-  color: #65727a;
-}
-
-.alert-arrow {
-  margin-left: auto;
-  color: #c95340;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   10. SECTIONS
-========================================================= */
-
-.section {
-  padding: 60px 0;
-}
-
-.section-heading {
-  max-width: 700px;
-  margin-bottom: 35px;
-}
-
-.section-heading-row {
-  max-width: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.center-heading {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.section-eyebrow {
-  color: #9d493d;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.section-eyebrow.light {
-  color: #efb2a7;
-}
-
-.section-heading h2,
-.life-content h2 {
-  margin: 10px 0 15px;
-  color: #17334b;
-  font-size: clamp(32px, 5vw, 48px);
-}
-
-.section-heading p {
-  margin-bottom: 0;
-  color: #64727d;
-  line-height: 1.7;
-}
-
-.text-link {
-  color: #a34234;
-  font-weight: 700;
-}
-
-.text-link:hover {
-  text-decoration: underline;
-}
-
-
-/* =========================================================
-   11. ACCÈS RAPIDES
-========================================================= */
-
-.quick-access {
-  padding-top: 35px;
-}
-
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.quick-card {
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 32px;
-
-  background: #f5f7f8;
-  border-bottom: 3px solid transparent;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.quick-card:hover {
-  transform: translateY(-5px);
-  background: #ffffff;
-  border-color: #9d493d;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
-}
-
-.quick-icon {
-  margin-bottom: 5px;
-  font-size: 34px;
-}
-
-.quick-card strong {
-  color: #17334b;
-  font-size: 19px;
-}
-
-.quick-card span:last-child {
-  color: #66737c;
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   12. ACTUALITÉS
-========================================================= */
-
-.news-section {
-  background: #f4f1eb;
-}
-
-.news-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.news-card {
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-}
-
-.news-placeholder {
-  width: 100%;
-  height: 200px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #dbe6eb;
-  font-size: 58px;
-}
-
-.news-card:nth-child(1) .news-placeholder {
-  background: #f3dfb7;
-}
-
-.news-card:nth-child(2) .news-placeholder {
-  background: #d6e8ed;
-}
-
-.news-card:nth-child(3) .news-placeholder {
-  background: #e1e1e9;
-}
-
-.news-content {
-  padding: 26px 24px;
-}
-
-.news-date {
-  color: #a34234;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.news-content h3 {
-  margin: 10px 0 14px;
-  color: #17334b;
-  font-size: 21px;
-  line-height: 1.3;
-}
-
-.news-content p {
-  margin: 0 0 20px;
-  color: #65727a;
-  line-height: 1.6;
-}
-
-.news-content a {
-  color: #a34234;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   13. VIE LOCALE ACCUEIL
-========================================================= */
-
-.life-section {
-  background: #ffffff;
-}
-
-.life-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.life-content {
-  max-width: 850px;
-}
-
-.life-content p {
-  color: #63717a;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-.life-links {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.life-links a {
-  padding: 18px 20px;
-  background: #f5f7f8;
-  border-left: 3px solid #9d493d;
-  color: #17334b;
-  font-weight: 700;
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
-}
-
-.life-links a:hover {
-  background: #17334b;
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   14. AGENDA ACCUEIL
-========================================================= */
-
-.agenda-section {
-  background: #f7f8f8;
-}
-
-.agenda-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-}
-
-.agenda-item {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  padding: 25px;
-
-  background: #ffffff;
-  border: 1px solid #e6e8e9;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.agenda-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-}
-
-.agenda-date {
-  width: 82px;
-  height: 82px;
-  flex: 0 0 82px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: #173b59;
-  color: #ffffff;
-  text-align: center;
-}
-
-.agenda-date strong {
-  font-size: 30px;
-  line-height: 1;
-}
-
-.agenda-date span {
-  margin-top: 6px;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.agenda-item h3 {
-  margin: 0 0 8px;
-  color: #17334b;
-}
-
-.agenda-item p {
-  margin: 0;
-  color: #6c777d;
-}
-
-
-/* =========================================================
-   15. CONTACT ACCUEIL
-========================================================= */
-
-.contact-section {
-  padding: 65px 0;
-  background: #17334b;
-  color: #ffffff;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 0.8fr;
-  align-items: center;
-  gap: 50px;
-}
-
-.contact-section h2 {
-  margin: 10px 0 15px;
-  color: #ffffff;
-  font-size: clamp(32px, 5vw, 48px);
-}
-
-.contact-phone {
-  font-size: 27px;
-  font-weight: 700;
-}
-
-.hours {
-  line-height: 1.7;
-}
-
-.contact-grid > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-
-/* =========================================================
-   16. HERO PAGES INTÉRIEURES
-========================================================= */
-
-.page-hero {
-  padding: 55px 0;
-  color: #ffffff;
-  background: linear-gradient(110deg, #17334b, #285472);
-}
-
-.page-hero h1 {
-  margin: 10px 0 15px;
-  font-size: clamp(40px, 6vw, 64px);
-  line-height: 1.05;
-}
-
-.page-hero p {
-  max-width: 900px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 19px;
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   17. DÉMARCHES / CARTES GÉNÉRIQUES
-========================================================= */
-
-.demarches-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.demarche-card {
-  min-width: 0;
-  min-height: 245px;
-  display: flex;
-  gap: 20px;
-  padding: 30px;
-
-  background: #f5f7f8;
-  border-bottom: 3px solid transparent;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-a.demarche-card:hover {
-  transform: translateY(-4px);
-  background: #ffffff;
-  border-color: #9d493d;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.demarche-icon {
-  flex: 0 0 auto;
-  font-size: 36px;
-  line-height: 1;
-}
-
-.demarche-card h3 {
-  margin: 0 0 12px;
-  color: #17334b;
-  font-size: 21px;
-  line-height: 1.3;
-}
-
-.demarche-card p {
-  margin: 0 0 20px;
-  color: #64727d;
-  line-height: 1.6;
-}
-
-.demarche-card span {
-  color: #a34234;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   18. BANDEAU CONTACT / AIDE
-========================================================= */
-
-.demarches-info {
-  padding: 60px 0;
-  background: #17334b;
-  color: #ffffff;
-}
-
-.demarches-info-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
-  gap: 70px;
-}
-
-.demarches-info h2 {
-  margin: 10px 0 15px;
-  font-size: 38px;
-}
-
-.demarches-info p {
-  max-width: 700px;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.7;
-}
-
-.demarches-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.demarches-contact strong {
-  font-size: 19px;
-}
-
-.demarches-contact a {
-  color: #ffffff;
-}
-
-.demarches-contact a:first-of-type {
-  font-size: 25px;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   19. MAIRE
-========================================================= */
-
-.mayor-section {
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
-
-.mayor-showcase {
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.mayor-showcase img {
-  width: auto;
-  max-width: 100%;
-  height: 360px;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-.appointment-text {
-  margin: 12px 0 0;
-  color: #63717a;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   20. ADJOINTS
-========================================================= */
-
-.elected-section {
-  padding-top: 50px;
-  padding-bottom: 55px;
-  background: #f5f7f8;
-}
-
-.elected-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 22px;
-}
-
-.elected-card {
-  overflow: hidden;
-  padding: 15px;
-
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.elected-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.11);
-}
-
-.elected-photo-img {
-  width: 100%;
-  height: 285px;
-  object-fit: contain;
-  object-position: center;
-}
-
-
-/* =========================================================
-   21. CONSEILLERS
-========================================================= */
-
-.councillors-section {
-  padding-top: 55px;
-  padding-bottom: 55px;
-}
-
-.councillors-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.councillor-name {
-  padding: 18px 20px;
-  background: #f5f7f8;
-  border-left: 3px solid #9d493d;
-  color: #17334b;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   22. CONSEIL MUNICIPAL DES ENFANTS
-========================================================= */
-
-.cme-mayor {
-  max-width: 450px;
-  margin: 0 auto 35px;
-  padding: 30px;
-
-  background: #17334b;
-  border-radius: 8px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.cme-role {
-  color: #efb2a7;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.cme-mayor h3 {
-  margin: 10px 0 0;
-  font-size: 30px;
-}
-
-.cme-adjoints {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.cme-person {
-  padding: 25px 15px;
-  background: #ffffff;
-  border-bottom: 3px solid #9d493d;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.cme-person strong {
-  display: block;
-  color: #17334b;
-  font-size: 17px;
-}
-
-.cme-person span {
-  display: block;
-  margin-top: 8px;
-  color: #9d493d;
-  font-size: 14px;
-}
-
-.cme-conseillers {
-  max-width: 850px;
-  margin: 40px auto 0;
-  text-align: center;
-}
-
-.cme-conseillers h3 {
-  color: #17334b;
-  font-size: 22px;
-}
-
-.cme-conseillers p {
-  color: #64727d;
-  line-height: 2;
-}
-
-
-/* =========================================================
-   23. DOCUMENTS MUNICIPAUX
-========================================================= */
-
-.municipal-documents {
-  margin-top: 60px;
-  padding-top: 55px;
-  border-top: 1px solid #e4e8ea;
-}
-
-.documents-year {
-  margin-top: 30px;
-}
-
-.documents-year h3 {
-  margin-bottom: 18px;
-  color: #17334b;
-  font-size: 25px;
-}
-
-.documents-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.document-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-
-  padding: 18px 22px;
-  background: #f5f7f8;
-  border-left: 3px solid #9d493d;
-}
-
-.document-row > div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.document-row strong {
-  color: #17334b;
-}
-
-.document-row span {
-  color: #64727d;
-  font-size: 14px;
-}
-
-.document-status {
-  padding: 8px 12px;
-  background: #ffffff;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.documents-note {
-  color: #64727d;
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   24. PAGE AGENDA
-========================================================= */
-
-.agenda-page-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 35px;
-}
-
-.agenda-page-item {
-  min-width: 0;
-  min-height: 135px;
-
-  display: flex;
-  align-items: center;
-  gap: 22px;
-
-  padding: 24px;
-
-  background: #f4f6f7;
-  border-left: 3px solid #b54a3a;
-
-  color: inherit;
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.agenda-page-item:hover {
-  transform: translateY(-3px);
-  background: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
-}
-
-.agenda-page-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.agenda-page-content h3 {
-  margin: 0 0 7px;
-  color: #17334b;
-  font-size: 20px;
-}
-
-.agenda-page-content p {
-  margin: 0 0 12px;
-  color: #64727d;
-  line-height: 1.5;
-}
-
-.agenda-more {
-  display: inline-block;
-  color: #b54a3a;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   25. FICHES ACTUALITÉ / ÉVÉNEMENT
-========================================================= */
-
-.actualite-detail {
-  max-width: 900px;
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.actualite-detail-icon {
-  min-width: 90px;
-  font-size: 64px;
-  text-align: center;
-}
-
-.actualite-detail-content {
-  flex: 1;
-}
-
-.actualite-detail-content h2 {
-  margin-top: 0;
-  color: #17334b;
-  font-size: 30px;
-}
-
-.actualite-detail-content p {
-  color: #586b79;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   26. TRAVAUX
-========================================================= */
-
-.travaux-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.travaux-card {
-  display: grid;
-  grid-template-columns: 65px 1fr;
-  gap: 22px;
-
-  padding: 28px;
-
-  background: #ffffff;
-  border-left: 4px solid #9d493d;
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
-}
-
-.travaux-number {
-  width: 55px;
-  height: 55px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #17334b;
-  color: #ffffff;
-
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.travaux-card h3 {
-  margin: 0 0 12px;
-  color: #17334b;
-  font-size: 21px;
-}
-
-.travaux-card p {
-  margin: 0 0 10px;
-  color: #64727d;
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   27. PAGE CONTACT
-========================================================= */
-
-.contact-page-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-}
-
-.contact-page-card {
-  padding: 38px;
-  background: #f5f7f8;
-}
-
-.contact-page-card h2 {
-  margin: 10px 0 30px;
-  color: #17334b;
-  font-size: 30px;
-}
-
-.contact-page-card > p {
-  margin-bottom: 25px;
-  color: #64727d;
-  line-height: 1.7;
-}
-
-.contact-detail {
-  display: flex;
-  gap: 18px;
-  margin-top: 25px;
-}
-
-.contact-detail-icon {
-  font-size: 28px;
-}
-
-.contact-detail strong {
-  display: block;
-  margin-bottom: 7px;
-  color: #17334b;
-}
-
-.contact-detail a {
-  color: #9d493d;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.contact-detail p {
-  margin: 0 0 12px;
-  color: #64727d;
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   28. MENTIONS LÉGALES / ACCESSIBILITÉ
-========================================================= */
-
-.legal-content {
-  max-width: 950px;
-}
-
-.legal-block {
-  padding: 28px 0;
-  border-bottom: 1px solid #e1e5e8;
-}
-
-.legal-block:first-child {
-  padding-top: 0;
-}
-
-.legal-block h2 {
-  margin: 0 0 15px;
-  color: #17334b;
-  font-size: 25px;
-}
-
-.legal-block p {
-  margin: 0 0 12px;
-  color: #586b79;
-  line-height: 1.7;
-}
-
-.legal-block p:last-child {
-  margin-bottom: 0;
-}
-
-.legal-block a {
-  color: #9d493d;
-  font-weight: 700;
-}
-
-.legal-back {
-  margin-top: 35px;
-}
-
-
-/* =========================================================
-   29. FOOTER
-========================================================= */
-
-.site-footer {
-  padding: 55px 0 20px;
-  background: #102535;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-}
-
-.footer-grid > div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-grid strong {
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.footer-title {
-  font-size: 22px;
-}
-
-.footer-grid a:hover {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  margin-top: 45px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 13px;
-}
-
-
-/* =========================================================
-   30. TABLETTE - 901px ET MOINS
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .container {
-    width: min(100% - 32px, 1180px);
-  }
-
-
-  /* HEADER */
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .header-inner {
-    position: relative;
-  }
-
-  .official-logo {
-    width: 280px;
-  }
-
-
-  /* MENU MOBILE */
-
-  .main-nav {
-    display: none;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    width: 100%;
-
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-
-    padding: 12px 25px 20px;
-
-    background: #ffffff;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.14);
-
-    z-index: 1300;
-  }
-
-  .main-nav.open {
-    display: flex;
-  }
-
-  .main-nav > a,
-  .nav-item,
-  .nav-link {
-    width: 100%;
-    min-height: auto;
-  }
-
-  .main-nav > a,
-  .nav-link {
-    justify-content: flex-start;
-    padding: 13px 0;
-  }
-
-  .main-nav > a::after,
-  .nav-link::after {
-    display: none;
-  }
-
-  .nav-item {
-    display: block;
-  }
-
-  .dropdown-menu {
-    position: static;
-    min-width: 0;
-    display: none;
-
-    padding: 0 0 10px 18px;
-
-    border-top: 0;
-    box-shadow: none;
-  }
-
-  .nav-item:hover > .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu a {
-    padding: 8px 0;
-    white-space: normal;
-  }
-
-
-  /* GRILLES */
-
-  .quick-grid,
-  .news-grid,
-  .demarches-grid,
-  .councillors-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .agenda-list,
-  .agenda-page-list,
-  .travaux-list {
-    grid-template-columns: 1fr;
-  }
-
-  .elected-grid,
-  .cme-adjoints {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contact-grid,
-  .demarches-info-grid,
-  .appointment-box {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-/* =========================================================
-   31. MOBILE - 600px ET MOINS
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .container {
-    width: min(100% - 28px, 1180px);
-  }
-
-
-  /* TOPBAR */
-
-  .topbar {
-    font-size: 11px;
-  }
-
-  .topbar-inner {
-    min-height: 30px;
-    padding: 0;
-  }
-
-  .topbar-inner > span {
-    display: none;
-  }
-
-  .topbar-links {
-    margin-left: auto;
-    gap: 14px;
-  }
-
-
-  /* HEADER */
-
-  .header-inner {
-    min-height: 78px;
-    gap: 12px;
-  }
-
-  .brand {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .official-logo {
-    width: 155px;
-    max-width: 155px;
-  }
-
-  .menu-toggle {
-    display: block;
-    flex: 0 0 auto;
-    font-size: 28px;
-  }
-
-  .main-nav {
-    padding: 10px 20px 18px;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: 430px;
-  }
-
-  .hero-content {
-    padding: 45px 0 55px;
-  }
-
-  .hero-kicker {
-    font-size: 12px;
-  }
-
-  .hero h1 {
-    margin-bottom: 18px;
-    font-size: 42px;
-    line-height: 1.05;
-  }
-
-  .hero-intro {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 25px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-
-  /* INFORMATION MAIRIE */
-
-  .alert-section {
-    transform: translateY(-18px);
-  }
-
-  .municipal-alert {
-    align-items: flex-start;
-    gap: 12px;
-    padding: 15px;
-  }
-
-  .alert-icon {
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
-    font-size: 16px;
-  }
-
-  .alert-arrow {
-    font-size: 18px;
-  }
-
-  .municipal-alert strong {
-    font-size: 15px;
-  }
-
-  .municipal-alert p {
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-
-  /* SECTIONS */
-
-  .section {
-    padding: 48px 0;
-  }
-
-  .section-heading {
-    margin-bottom: 28px;
-  }
-
-  .section-heading-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .section-heading h2,
-  .life-content h2 {
-    font-size: 32px;
-  }
-
-
-  /* PAGES */
-
-  .page-hero {
-    padding: 42px 0;
-  }
-
-  .page-hero h1 {
-    font-size: 38px;
-  }
-
-  .page-hero p {
-    font-size: 16px;
-  }
-
-
-  /* GRILLES */
-
-  .quick-grid,
-  .news-grid,
-  .demarches-grid,
-  .life-links,
-  .elected-grid,
-  .councillors-grid,
-  .cme-adjoints,
-  .contact-page-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* CARTES */
-
-  .quick-card,
-  .demarche-card {
-    min-height: auto;
-  }
-
-  .demarche-card {
-    padding: 24px;
-  }
-
-
-  /* ACTUALITÉS */
-
-  .news-placeholder {
-    height: 170px;
-  }
-
-
-  /* AGENDA */
-
-  .agenda-item,
-  .agenda-page-item {
-    align-items: flex-start;
-    gap: 17px;
-    padding: 18px;
-  }
-
-  .agenda-date,
-  .agenda-page-item .agenda-date {
-    width: 68px;
-    height: 68px;
-    flex: 0 0 68px;
-  }
-
-  .agenda-date strong {
-    font-size: 25px;
-  }
-
-  .agenda-page-content h3 {
-    font-size: 18px;
-  }
-
-
-  /* MAIRE */
-
-  .mayor-showcase img {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-  }
-
-  .elected-photo-img {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-  }
-
-
-  /* DOCUMENTS */
-
-  .document-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-
-  /* TRAVAUX */
-
-  .travaux-card {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* FICHES DETAIL */
-
-  .actualite-detail {
-    flex-direction: column;
-  }
-
-  .actualite-detail-icon {
-    min-width: 0;
-  }
-
-
-  /* CONTACT */
-
-  .contact-page-card {
-    padding: 28px 22px;
-  }
-
-
-  /* FOOTER */
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom {
-    margin-top: 30px;
-  }
-
-}/* =========================================
-   LOGO + NOM DE LA COMMUNE
-========================================= */
-
-.brand {
-  display: flex;
-  align-items: center;
   gap: 14px;
 }
 
@@ -1826,7 +92,6 @@ a.demarche-card:hover {
 .brand-text {
   display: flex;
   flex-direction: column;
-  min-width: 0;
 }
 
 .brand-text strong {
@@ -1842,9 +107,941 @@ a.demarche-card:hover {
 }
 
 
-/* MOBILE */
+/* NAVIGATION */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.main-nav > a,
+.nav-link {
+  min-height: 105px;
+  display: inline-flex;
+  align-items: center;
+  color: #1d2a35;
+}
+
+.nav-item {
+  position: relative;
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+
+  display: none;
+
+  min-width: 245px;
+
+  padding: 10px 0;
+
+  background: #ffffff;
+  border-top: 3px solid #9d493d;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+  z-index: 1200;
+}
+
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #17334b;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #f5f7f8;
+  color: #9d493d;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: #17334b;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO DIAPORAMA
+========================================================= */
+
+.hero {
+  min-height: 540px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #17334b;
+
+  color: #ffffff;
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(10, 35, 55, 0.55) 0%,
+    rgba(10, 35, 55, 0.30) 50%,
+    rgba(10, 35, 55, 0.05) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  padding: 80px 0;
+}
+
+.hero,
+.hero h1,
+.hero p,
+.hero span,
+.hero-content {
+  color: #ffffff !important;
+}
+
+.hero-kicker {
+  margin: 0;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.hero h1 {
+  max-width: 900px;
+
+  margin: 15px 0 25px;
+
+  font-size: clamp(48px, 7vw, 82px);
+
+  line-height: 1;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-intro {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #ffffff !important;
+
+  font-size: 21px;
+
+  line-height: 1.6;
+
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+
+/* BOUTONS */
+
+.btn {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 26px;
+
+  border-radius: 5px;
+
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: #a94e40;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #17334b !important;
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #17334b;
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,.65);
+  color: #ffffff;
+}
+
+
+/* INFORMATION MAIRIE */
+
+.alert-section {
+  position: relative;
+  z-index: 10;
+
+  transform: translateY(-28px);
+}
+
+.municipal-alert {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 23px 28px;
+
+  background: #ffffff;
+
+  border-left: 4px solid #c95340;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,.13);
+}
+
+.alert-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #c95340;
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.municipal-alert strong {
+  display: block;
+  color: #17334b;
+}
+
+.municipal-alert p {
+  margin: 5px 0 0;
+  color: #65727a;
+}
+
+.alert-arrow {
+  margin-left: auto;
+
+  color: #c95340;
+
+  font-size: 22px;
+}
+
+
+/* SECTIONS */
+
+.section {
+  padding: 60px 0;
+}
+
+.section-heading {
+  max-width: 700px;
+
+  margin-bottom: 35px;
+}
+
+.section-heading-row {
+  max-width: none;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 25px;
+}
+
+.section-eyebrow {
+  color: #9d493d;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.section-eyebrow.light {
+  color: #efb2a7;
+}
+
+.section-heading h2,
+.life-content h2 {
+  margin: 10px 0 15px;
+
+  color: #17334b;
+
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+.section-heading p {
+  color: #64727d;
+
+  line-height: 1.7;
+}
+
+.text-link {
+  color: #a34234;
+
+  font-weight: 700;
+}
+
+
+/* ACCÈS RAPIDES */
+
+.quick-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.quick-card {
+  min-height: 200px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding: 32px;
+
+  background: #f5f7f8;
+}
+
+.quick-card:hover {
+  background: #ffffff;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,.09);
+}
+
+.quick-icon {
+  font-size: 34px;
+}
+
+.quick-card strong {
+  color: #17334b;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   ACTUALITÉS AVEC PHOTOS
+========================================================= */
+
+.news-section {
+  background: #f4f1eb;
+}
+
+.news-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.news-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.news-image {
+  width: 100%;
+
+  height: 220px;
+
+  overflow: hidden;
+
+  background: #f1f3f4;
+}
+
+.news-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+.news-content {
+  padding: 26px 24px;
+}
+
+.news-date {
+  color: #a34234;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.news-content h3 {
+  margin: 10px 0 14px;
+
+  color: #17334b;
+
+  font-size: 21px;
+
+  line-height: 1.3;
+}
+
+.news-content p {
+  margin: 0 0 20px;
+
+  color: #65727a;
+
+  line-height: 1.6;
+}
+
+.news-content a {
+  color: #a34234;
+
+  font-weight: 700;
+}
+
+
+/* VIE LOCALE */
+
+.life-content {
+  max-width: 850px;
+}
+
+.life-content p {
+  color: #63717a;
+
+  line-height: 1.8;
+}
+
+.life-links {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.life-links a {
+  padding: 18px 20px;
+
+  background: #f5f7f8;
+
+  border-left: 3px solid #9d493d;
+
+  color: #17334b;
+
+  font-weight: 700;
+}
+
+
+/* AGENDA */
+
+.agenda-section {
+  background: #f7f8f8;
+}
+
+.agenda-list {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 25px;
+}
+
+.agenda-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e6e8e9;
+}
+
+.agenda-date {
+  width: 82px;
+  height: 82px;
+
+  flex: 0 0 82px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #173b59;
+
+  color: #ffffff;
+}
+
+.agenda-date strong {
+  font-size: 30px;
+}
+
+.agenda-date span {
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+.agenda-item h3 {
+  margin: 0 0 8px;
+
+  color: #17334b;
+}
+
+
+/* CONTACT */
+
+.contact-section {
+  padding: 65px 0;
+
+  background: #17334b;
+
+  color: #ffffff;
+}
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr .8fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.contact-section h2 {
+  color: #ffffff;
+
+  font-size: 40px;
+}
+
+
+/* HERO PAGES */
+
+.page-hero {
+  padding: 55px 0;
+
+  background: linear-gradient(110deg,#17334b,#285472);
+
+  color: #ffffff;
+}
+
+.page-hero h1 {
+  margin: 10px 0 15px;
+
+  font-size: clamp(40px,6vw,64px);
+}
+
+.page-hero p {
+  color: rgba(255,255,255,.86);
+
+  font-size: 19px;
+}
+
+
+/* CARTES GÉNÉRIQUES */
+
+.demarches-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3,minmax(0,1fr));
+
+  gap: 22px;
+}
+
+.demarche-card {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 30px;
+
+  background: #f5f7f8;
+}
+
+.demarche-icon {
+  font-size: 36px;
+}
+
+.demarche-card h3 {
+  margin: 0 0 12px;
+
+  color: #17334b;
+}
+
+.demarche-card p {
+  color: #64727d;
+
+  line-height: 1.6;
+}
+
+.demarche-card span {
+  color: #a34234;
+
+  font-weight: 700;
+}
+
+
+/* BANDEAU CONTACT */
+
+.demarches-info {
+  padding: 60px 0;
+
+  background: #17334b;
+
+  color: #ffffff;
+}
+
+.demarches-info-grid {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.demarches-contact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  padding: 30px;
+
+  background: rgba(255,255,255,.08);
+}
+
+
+/* PAGE AGENDA */
+
+.agenda-page-list {
+  display: grid;
+
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap: 22px;
+}
+
+.agenda-page-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 24px;
+
+  background: #f4f6f7;
+
+  border-left: 3px solid #b54a3a;
+}
+
+.agenda-page-content h3 {
+  margin: 0 0 7px;
+
+  color: #17334b;
+}
+
+.agenda-more {
+  color: #b54a3a;
+
+  font-weight: 700;
+}
+
+
+/* TRAVAUX */
+
+.travaux-list {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 22px;
+}
+
+.travaux-card {
+  display: grid;
+
+  grid-template-columns: 65px 1fr;
+
+  gap: 22px;
+
+  padding: 28px;
+
+  background: #ffffff;
+
+  border-left: 4px solid #9d493d;
+}
+
+
+/* CONTACT PAGE */
+
+.contact-page-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 30px;
+}
+
+.contact-page-card {
+  padding: 38px;
+
+  background: #f5f7f8;
+}
+
+
+/* LEGAL */
+
+.legal-content {
+  max-width: 950px;
+}
+
+.legal-block {
+  padding: 28px 0;
+
+  border-bottom: 1px solid #e1e5e8;
+}
+
+.legal-block h2 {
+  color: #17334b;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+  padding: 55px 0 20px;
+
+  background: #102535;
+
+  color: rgba(255,255,255,.72);
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 40px;
+}
+
+.footer-grid > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.footer-grid strong {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 45px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 15px 25px;
+
+    background: #ffffff;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .nav-item {
+    min-height: auto;
+
+    display: block;
+  }
+
+  .main-nav > a,
+  .nav-link {
+    min-height: auto;
+
+    padding: 13px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+
+    box-shadow: none;
+
+    border: 0;
+
+    padding-left: 18px;
+  }
+
+  .quick-grid,
+  .news-grid,
+  .demarches-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .agenda-list,
+  .agenda-page-list,
+  .travaux-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid,
+  .demarches-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .topbar-inner > span {
+    display: none;
+  }
+
+  .topbar-links {
+    margin-left: auto;
+  }
+
+  .header-inner {
+    min-height: 85px;
+  }
 
   .brand-logo img {
     width: 135px;
@@ -1854,13 +1051,270 @@ a.demarche-card:hover {
     display: none;
   }
 
-  .header-inner {
-    min-height: 85px;
-  }
-
   .menu-toggle {
     display: block;
+
     margin-left: auto;
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .hero-content {
+    padding: 45px 0 55px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-intro {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-heading-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .quick-grid,
+  .news-grid,
+  .demarches-grid,
+  .life-links,
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-image {
+    height: 190px;
+  }
+
+  .agenda-item,
+  .agenda-page-item {
+    align-items: flex-start;
+
+    padding: 18px;
+  }
+
+  .agenda-date {
+    width: 68px;
+    height: 68px;
+
+    flex: 0 0 68px;
+  }
+
+  .travaux-card {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}/* =========================================
+   DETAIL ACTUALITE
+========================================= */
+
+.actualite-detail {
+  background: #fff;
+}
+
+.actualite-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 500px) 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.actualite-detail-image {
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.actualite-detail-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.actualite-detail-content h2 {
+  margin: 8px 0 20px;
+  font-size: 32px;
+  color: #123550;
+}
+
+.actualite-detail-content p {
+  margin: 0 0 30px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #536273;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .actualite-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .actualite-detail-image {
+    padding: 10px;
+  }
+
+  .actualite-detail-content h2 {
+    font-size: 26px;
+  }
+
+}/* =========================================
+   ELUS - PRESENTATION COMPLETE
+========================================= */
+
+.center-heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mayor-card {
+  max-width: 460px;
+  margin: 0 auto;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mayor-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+.elu-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.elu-info h3 {
+  margin: 0 0 7px;
+  color: #17334b;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.elu-info span {
+  display: block;
+  color: #a34234;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.elu-info p {
+  margin: 15px 0 0;
+  color: #64727d;
+  line-height: 1.6;
+}
+
+
+/* ADJOINTS */
+
+.elected-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.elected-card {
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.elected-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+
+/* CONSEILLERS */
+
+.councillors-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.councillor-card {
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.councillor-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+
+/* TABLETTE */
+
+@media (max-width: 1000px) {
+
+  .elected-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .councillors-photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .mayor-card img {
+    height: auto;
+  }
+
+  .elected-grid,
+  .councillors-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elected-card img,
+  .councillor-card img {
+    height: auto;
+    max-height: 420px;
   }
 
 }

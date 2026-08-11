@@ -16,29 +16,40 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 /* =========================================
+   FONCTION DE LECTURE JSON
+========================================= */
+
+function lireJSON(nomFichier) {
+  return JSON.parse(
+    fs.readFileSync(
+      path.join(__dirname, "data", nomFichier),
+      "utf8"
+    )
+  );
+}
+
+
+/* =========================================
    ACCUEIL
 ========================================= */
 
 app.get("/", (req, res) => {
 
-  const actualites = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "actualites.json"),
-      "utf8"
-    )
-  );
+  const actualites = lireJSON("actualites.json");
+  const agenda = lireJSON("agenda.json");
 
-  const agenda = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "agenda.json"),
-      "utf8"
-    )
-  );
+  const infoMairie =
+    actualites.find(
+      actualite => actualite.slug === "plan-canicule"
+    ) || actualites[0];
 
   res.render("index", {
     title: "Mairie de Saint-Loup-Cammas",
-    infoMairie: actualites[0],
+
+    infoMairie,
+
     actualitesAccueil: actualites.slice(0, 3),
+
     agendaAccueil: agenda.slice(0, 2)
   });
 
@@ -221,12 +232,7 @@ app.get("/commerces-services", (req, res) => {
 
 app.get("/actualites", (req, res) => {
 
-  const actualites = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "actualites.json"),
-      "utf8"
-    )
-  );
+  const actualites = lireJSON("actualites.json");
 
   res.render("actualites", {
     title: "Actualités - Saint-Loup-Cammas",
@@ -238,15 +244,16 @@ app.get("/actualites", (req, res) => {
 
 app.get("/actualites/:slug", (req, res) => {
 
-  const actualites = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "actualites.json"),
-      "utf8"
-    )
-  );
+  const actualites = lireJSON("actualites.json");
 
-  const actualite = actualites.find(
-    item => item.slug === req.params.slug
+  const slugRecherche = String(req.params.slug)
+    .trim()
+    .toLowerCase();
+
+  const actualite = actualites.find(item =>
+    String(item.slug || "")
+      .trim()
+      .toLowerCase() === slugRecherche
   );
 
   if (!actualite) {
@@ -267,12 +274,7 @@ app.get("/actualites/:slug", (req, res) => {
 
 app.get("/agenda", (req, res) => {
 
-  const agenda = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "agenda.json"),
-      "utf8"
-    )
-  );
+  const agenda = lireJSON("agenda.json");
 
   res.render("agenda", {
     title: "Agenda - Saint-Loup-Cammas",
@@ -284,12 +286,7 @@ app.get("/agenda", (req, res) => {
 
 app.get("/agenda/:slug", (req, res) => {
 
-  const agenda = JSON.parse(
-    fs.readFileSync(
-      path.join(__dirname, "data", "agenda.json"),
-      "utf8"
-    )
-  );
+  const agenda = lireJSON("agenda.json");
 
   const slugRecherche = String(req.params.slug)
     .trim()
@@ -323,8 +320,31 @@ app.get("/travaux", (req, res) => {
   });
 });
 
+
 /* =========================================
-   MENTIONS LEGALES
+   CONTACT
+========================================= */
+
+app.get("/contact", (req, res) => {
+  res.render("contact", {
+    title: "Contact - Saint-Loup-Cammas"
+  });
+});
+
+
+/* =========================================
+   BULLETIN MUNICIPAL
+========================================= */
+
+app.get("/bulletin-municipal", (req, res) => {
+  res.render("bulletin-municipal", {
+    title: "Bulletin municipal - Saint-Loup-Cammas"
+  });
+});
+
+
+/* =========================================
+   MENTIONS LÉGALES
 ========================================= */
 
 app.get("/mentions-legales", (req, res) => {
@@ -333,24 +353,21 @@ app.get("/mentions-legales", (req, res) => {
   });
 });
 
+
 /* =========================================
-   SERVEUR
+   ACCESSIBILITÉ
 ========================================= */
-app.get("/bulletin-municipal", (req, res) => {
-  res.render("bulletin-municipal", {
-    title: "Bulletin municipal - Saint-Loup-Cammas"
-  });
-});
-app.get("/contact", (req, res) => {
-  res.render("contact", {
-    title: "Contact - Saint-Loup-Cammas"
-  });
-});
+
 app.get("/accessibilite", (req, res) => {
   res.render("accessibilite", {
     title: "Accessibilité - Saint-Loup-Cammas"
   });
 });
+
+
+/* =========================================
+   SERVEUR
+========================================= */
 
 const PORT = process.env.PORT || 3000;
 

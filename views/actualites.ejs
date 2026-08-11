@@ -2,21 +2,14 @@
 
 <main>
 
-  <!-- =====================================
-       EN-TÊTE
-  ====================================== -->
-
   <section class="page-hero">
-
     <div class="container">
 
       <span class="section-eyebrow light">
         Saint-Loup-Cammas
       </span>
 
-      <h1>
-        Actualités
-      </h1>
+      <h1>Actualités</h1>
 
       <p>
         Retrouvez les dernières informations,
@@ -24,16 +17,10 @@
       </p>
 
     </div>
-
   </section>
 
 
-  <!-- =====================================
-       ACTUALITÉS
-  ====================================== -->
-
   <section class="section news-section">
-
     <div class="container">
 
       <div class="section-heading">
@@ -60,9 +47,18 @@
 
           <article class="news-card">
 
-            <div class="news-placeholder">
-              <%= actualite.icone %>
-            </div>
+            <% if (actualite.image) { %>
+
+              <div class="news-image">
+
+                <img
+                  src="<%= actualite.image %>"
+                  alt="<%= actualite.titre %>"
+                >
+
+              </div>
+
+            <% } %>
 
 
             <div class="news-content">
@@ -92,16 +88,10 @@
       </div>
 
     </div>
-
   </section>
 
 
-  <!-- =====================================
-       AUTRES INFORMATIONS
-  ====================================== -->
-
   <section class="section">
-
     <div class="container">
 
       <div class="section-heading">
@@ -124,9 +114,6 @@
 
       <div class="demarches-grid">
 
-
-        <!-- AGENDA -->
-
         <a href="/agenda" class="demarche-card">
 
           <div class="demarche-icon">
@@ -135,9 +122,7 @@
 
           <div>
 
-            <h3>
-              Agenda
-            </h3>
+            <h3>Agenda</h3>
 
             <p>
               Consultez les prochains événements
@@ -153,8 +138,6 @@
         </a>
 
 
-        <!-- PUBLICATIONS -->
-
         <a href="/publications" class="demarche-card">
 
           <div class="demarche-icon">
@@ -163,9 +146,7 @@
 
           <div>
 
-            <h3>
-              Publications
-            </h3>
+            <h3>Publications</h3>
 
             <p>
               Retrouvez les bulletins municipaux
@@ -180,8 +161,6 @@
 
         </a>
 
-
-        <!-- TRAVAUX -->
 
         <a href="/travaux" class="demarche-card">
 
@@ -211,13 +190,8 @@
       </div>
 
     </div>
-
   </section>
 
-
-  <!-- =====================================
-       CONTACT
-  ====================================== -->
 
   <section class="demarches-info">
 

@@ -4,23 +4,23 @@
     "categorie": "INFORMATION",
     "titre": "Plan canicule",
     "resume": "Retrouvez les recommandations utiles en période de fortes chaleurs.",
-    "icone": "☀️",
+    "image": "/images/actualites/canicule.jpg",
     "contenu": "Retrouvez ici les recommandations et informations utiles en période de fortes chaleurs."
   },
   {
-    "slug": "alerte-prelevement-eau",
-    "categorie": "INFORMATION",
-    "titre": "Alerte prélèvement d'eau",
-    "resume": "Informations et recommandations concernant l'utilisation de l'eau.",
-    "icone": "💧",
-    "contenu": "Retrouvez ici les informations concernant les restrictions et recommandations liées à l'utilisation de l'eau."
-  },
-  {
-    "slug": "enquete-insee-emploi-du-temps",
-    "categorie": "ENQUÊTE",
-    "titre": "Enquête INSEE – Emploi du temps",
-    "resume": "Une enquête INSEE est menée au cours de l'année 2026.",
-    "icone": "📊",
-    "contenu": "L'INSEE réalise une enquête sur l'emploi du temps auprès d'une partie de la population."
-  }
+  "slug": "alerte-prelevement-eau",
+  "categorie": "INFORMATION",
+  "titre": "Alerte prélèvement d'eau",
+  "resume": "Informations et recommandations concernant l'utilisation de l'eau.",
+  "image": "/images/actualites/canicule2.jpg",
+  "contenu": "Retrouvez ici les informations concernant les restrictions et recommandations liées à l'utilisation de l'eau."
+},
+{
+  "slug": "enquete-insee-emploi-du-temps",
+  "categorie": "ENQUÊTE",
+  "titre": "Enquête INSEE – Emploi du temps",
+  "resume": "Une enquête INSEE est menée au cours de l'année 2026.",
+  "image": "/images/actualites/enquete.jpg",
+  "contenu": "L'INSEE réalise une enquête sur l'emploi du temps auprès d'une partie de la population."
+}
 ]
