@@ -462,7 +462,7 @@ select {
 }
 
 
-/* ACCÈS RAPIDES */
+/* ACCÃˆS RAPIDES */
 
 .quick-grid {
   display: grid;
@@ -504,7 +504,7 @@ select {
 
 
 /* =========================================================
-   ACTUALITÉS AVEC PHOTOS
+   ACTUALITÃ‰S AVEC PHOTOS
 ========================================================= */
 
 .news-section {
@@ -733,7 +733,7 @@ select {
 }
 
 
-/* CARTES GÉNÉRIQUES */
+/* CARTES GÃ‰NÃ‰RIQUES */
 
 .demarches-grid {
   display: grid;
@@ -1315,6 +1315,1474 @@ select {
   .councillor-card img {
     height: auto;
     max-height: 420px;
+  }
+
+}/* =========================================
+   NUMEROS UTILES
+========================================= */
+
+.useful-light-section {
+  background: #f5f7f8;
+}
+
+.useful-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.useful-number-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 125px;
+  padding: 25px;
+
+  background: #f5f7f8;
+  border-left: 4px solid #17334b;
+
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.useful-number-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.useful-number-card.emergency {
+  border-left-color: #a34234;
+}
+
+.useful-number-icon {
+  font-size: 32px;
+}
+
+.useful-number-card h3 {
+  margin: 0 0 8px;
+  color: #17334b;
+  font-size: 17px;
+}
+
+.useful-number-card strong {
+  color: #a34234;
+  font-size: 27px;
+}
+
+.useful-contact-list {
+  display: grid;
+  gap: 15px;
+}
+
+.useful-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 22px 25px;
+
+  background: #ffffff;
+  border: 1px solid #e3e7e9;
+}
+
+.useful-contact-row h3 {
+  margin: 0 0 5px;
+  color: #17334b;
+}
+
+.useful-contact-row p {
+  margin: 0;
+  color: #64727d;
+}
+
+.useful-contact-row > a {
+  flex-shrink: 0;
+  color: #a34234;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .useful-numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .useful-contact-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}/* =========================================
+   COMMUNE & PATRIMOINE
+========================================= */
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.heritage-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.heritage-content h3 {
+  margin-top: 0;
+  color: #17334b;
+  font-size: 28px;
+}
+
+.heritage-content p,
+.heritage-text p {
+  color: #64727d;
+  line-height: 1.8;
+}
+
+.heritage-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.heritage-gallery img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+
+  .heritage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heritage-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .heritage-image img,
+  .heritage-gallery img {
+    height: auto;
+  }
+
+}/* =========================================
+   ACTUALITÃ‰S ACCUEIL - ICÃ”NES
+========================================= */
+
+.home-news-icon {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 82px;
+
+  background: #f7f3ec;
+  border-bottom: 1px solid #eee8df;
+}
+
+.home-news-card {
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+
+  .home-news-icon {
+    height: 160px;
+    font-size: 68px;
+  }
+
+}/* =========================================
+   PAGE ACTUALITÃ‰S
+========================================= */
+
+/* =========================================
+   MOT DU MAIRE
+========================================= */
+
+.mayor-message-section {
+  background: #ffffff;
+}
+
+.mayor-message-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+
+.mayor-message-photo {
+  text-align: left;
+}
+
+.mayor-message-photo img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 18px;
+}
+
+.mayor-message-identity {
+  padding: 0;
+}
+
+.mayor-message-identity strong {
+  display: block;
+  color: #123955;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.mayor-message-identity span {
+  display: block;
+  color: #647582;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.mayor-message-content {
+  max-width: 820px;
+}
+
+.mayor-message-content h2 {
+  margin: 10px 0 28px;
+  color: #123955;
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+.mayor-message-content p {
+  color: #526b7d;
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0 0 22px;
+}
+
+.mayor-message-signature {
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid #dfe5e8;
+}
+
+.mayor-message-signature strong {
+  display: block;
+  color: #123955;
+  font-size: 18px;
+}
+
+.mayor-message-signature span {
+  display: block;
+  margin-top: 4px;
+  color: #647582;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .mayor-message-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .mayor-message-photo {
+    max-width: 260px;
+  }
+
+  .mayor-message-content h2 {
+    font-size: 30px;
+  }
+}
+.documents-year + .municipal-alert {
+  margin-top: 35px;
+  
+}/* =========================================
+   BLASON
+========================================= */
+
+.blason-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.blason-image img {
+  width: min(260px, 100%);
+  height: auto;
+  object-fit: contain;
+}/* =========================================
+   LOGO 2018
+========================================= */
+
+.logo-2018-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  padding: 28px;
+
+  border-radius: 8px;
+}
+
+.logo-2018-image img {
+  display: block;
+  width: min(300px, 100%);
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-2018-image + .heritage-content {
+  align-self: center;
+}
+
+@media (max-width: 800px) {
+
+  .logo-2018-image {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .logo-2018-image img {
+    width: min(260px, 100%);
+  }
+
+}.logo-2018-image
+  ~ .heritage-content {
+  max-width: 620px;
+}/* =========================================
+   BLASON - MISE EN PAGE IMAGES + TEXTE
+========================================= */
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 55px;
+  align-items: center;
+  margin-top: 35px;
+}
+
+
+/* BLASON HISTORIQUE */
+
+.blason-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blason-image img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* LOGO 2018 */
+
+.logo-2018-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo-2018-image img {
+  display: block;
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* TEXTE */
+
+.heritage-content {
+  max-width: 700px;
+}
+
+.heritage-content p:first-child {
+  margin-top: 0;
+}
+
+.heritage-content p {
+  line-height: 1.8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .heritage-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .blason-image img {
+    width: 200px;
+  }
+
+  .logo-2018-image img {
+    width: 260px;
+  }
+
+  .heritage-content {
+    max-width: none;
+  }
+
+}.postcard-item {
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+.postcard-title {
+  display: block;
+  padding: 14px 12px 16px;
+
+  color: #1f1f1f;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.postcard-lightbox-title {
+  margin: 15px 0 5px;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}/* =========================================
+   LIGHTBOX CARTES POSTALES - CORRECTION
+========================================= */
+
+.postcard-lightbox {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(0, 0, 0, 0.92) !important;
+  z-index: 999999 !important;
+}
+
+.postcard-lightbox.open {
+  display: flex !important;
+}
+
+.postcard-lightbox-content {
+  position: relative;
+  max-width: 85vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.postcard-lightbox-content img {
+  display: block;
+  max-width: 85vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.postcard-lightbox-title {
+  margin: 14px 0 4px;
+  color: white !important;
+  font-size: 20px;
+}
+
+.postcard-counter {
+  color: white !important;
+  margin-top: 5px;
+}
+
+.postcard-close,
+.postcard-prev,
+.postcard-next {
+  position: absolute;
+  z-index: 1000000;
+
+  border: 0;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+
+  cursor: pointer;
+}
+
+.postcard-close {
+  top: 20px;
+  right: 25px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  font-size: 34px;
+}
+
+.postcard-prev,
+.postcard-next {
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 75px;
+
+  font-size: 48px;
+}
+
+.postcard-prev {
+  left: 25px;
+}
+
+.postcard-next {
+  right: 25px;
+}/* =========================================
+   SALLE DES FÊTES
+========================================= */
+
+.salle-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.salle-photos-grid figure {
+  margin: 0;
+}
+
+.salle-photos-grid img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.salle-photos-grid figcaption {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #123955;
+}
+
+@media (max-width: 700px) {
+
+  .salle-photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .salle-photos-grid img {
+    height: auto;
+  }
+
+}/* =========================================
+   PHOTOS CRÈCHE
+========================================= */
+
+.creche-photos {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 30px !important;
+  margin-top: 30px !important;
+  width: 100% !important;
+}
+
+.creche-photos figure {
+  display: block !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.creche-photos img {
+  display: block !important;
+  width: 100% !important;
+  height: 360px !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .creche-photos {
+    grid-template-columns: 1fr !important;
+  }
+
+  .creche-photos img {
+    height: auto !important;
+  }
+}/* =====================================
+   INFORMATION MAIRIE - ACCUEIL
+===================================== */
+
+.home-info-bar {
+  background: #f2f5f7;
+  border-top: 1px solid #e1e6e9;
+  border-bottom: 1px solid #e1e6e9;
+}
+
+.home-info-bar-inner {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.home-info-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b8432e;
+}
+
+.home-info-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #b8432e;
+  color: #fff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.home-info-content {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  flex: 1;
+
+  color: #173752;
+}
+
+.home-info-content strong {
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.home-info-content span {
+  color: #52687a;
+  font-size: 15px;
+}
+
+.home-info-link {
+  flex-shrink: 0;
+
+  font-weight: 700;
+  text-decoration: none;
+  color: #173752;
+}
+
+.home-info-link:hover {
+  text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .home-info-bar-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .home-info-content {
+    display: block;
+  }
+
+  .home-info-content strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+}/* =========================================
+   SLIDER ACCUEIL
+========================================= */
+
+.home-hero-slider {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.home-hero-slide {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.home-hero-slide.active {
+  opacity: 1;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  z-index: 1;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+}
+
+.home-hero-content h1,
+.home-hero-content p,
+.home-hero-content .section-eyebrow {
+  color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .home-hero-slider,
+  .home-hero-content {
+    min-height: 430px;
+  }
+
+}/* =========================================
+   COMMISSIONS MUNICIPALES
+========================================= */
+
+.commissions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.commission-card {
+  background: #fff;
+  border: 1px solid #e3e8ec;
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.commission-card h3 {
+  margin-top: 0;
+  color: #173752;
+}
+
+.commission-card p {
+  line-height: 1.65;
+}
+
+.commission-members {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .commissions-grid {
+    grid-template-columns: 1fr;
+  }
+}/* =========================================
+   SOUS-MENU CONSEIL MUNICIPAL
+========================================= */
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu-link {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dropdown-submenu-link span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.dropdown-submenu-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  min-width: 260px;
+
+  background: white;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 1000;
+}
+
+.dropdown-submenu:hover .dropdown-submenu-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.dropdown-submenu-menu a {
+  display: block;
+  padding: 12px 18px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown-submenu-menu a:hover {
+  background: #f3f6f8;
+}
+
+
+/* =========================================
+   COMPTES RENDUS CONSEIL MUNICIPAL
+========================================= */
+
+.council-documents {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.council-document-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 18px 22px;
+
+  background: #fff;
+  border: 1px solid #e3e8ec;
+  border-radius: 8px;
+}
+
+.council-document-date {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.council-document-icon {
+  font-size: 25px;
+}
+
+.council-document-date strong {
+  display: block;
+  color: #173752;
+}
+
+.council-document-date span {
+  display: block;
+  margin-top: 4px;
+}
+
+.document-pending {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  background: #f1f3f5;
+  border-radius: 20px;
+
+  color: #667681;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+
+  .council-document-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}/* =========================================
+   PUBLICATIONS MUNICIPALES
+========================================= */
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.publication-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 20px 22px;
+
+  background: #fff;
+  border: 1px solid #e3e8ec;
+  border-radius: 8px;
+}
+
+.publication-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.publication-icon {
+  font-size: 28px;
+}
+
+.publication-info strong {
+  display: block;
+  color: #173752;
+  font-size: 17px;
+}
+
+.publication-info span {
+  display: block;
+  margin-top: 5px;
+  color: #5e7180;
+}
+
+@media (max-width: 650px) {
+
+  .publication-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}/* =====================================
+   LIGHTBOX SAINT-LOUP
+===================================== */
+
+.saint-loup-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.saint-loup-lightbox img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.saint-loup-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 1000000;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 48px;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.saint-loup-photo {
+  cursor: pointer;
+}/* =====================================
+   NAVIGATION LIGHTBOX
+===================================== */
+
+.saint-loup-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 1000000;
+
+  width: 58px;
+  height: 70px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+
+  font-size: 54px;
+  line-height: 60px;
+
+  cursor: pointer;
+}
+
+.saint-loup-lightbox-prev {
+  left: 25px;
+}
+
+.saint-loup-lightbox-next {
+  right: 25px;
+}
+
+.saint-loup-lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 700px) {
+
+  .saint-loup-lightbox-nav {
+    width: 44px;
+    height: 58px;
+    font-size: 40px;
+  }
+
+  .saint-loup-lightbox-prev {
+    left: 8px;
+  }
+
+  .saint-loup-lightbox-next {
+    right: 8px;
+  }
+
+}
+
+/* =========================================================
+   GALERIE SAINT-LOUP
+========================================================= */
+
+.saint-loup-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.saint-loup-photo {
+  display: block;
+  width: 100%;
+  height: 220px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 14px;
+  background: #eeeeee;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+}
+
+.saint-loup-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.saint-loup-photo:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 1000px) {
+  .saint-loup-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .saint-loup-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .saint-loup-photo {
+    height: 160px;
+  }
+}
+
+@media (max-width: 450px) {
+  .saint-loup-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .saint-loup-photo {
+    height: 220px;
+  }
+}
+
+
+/* =========================================================
+   NAVIGATION MOBILE — VERSION CONSOLIDÉE
+   Les sous-menus s'ouvrent avec la classe .submenu-open.
+========================================================= */
+
+@media (max-width: 900px) {
+  .main-header {
+    position: relative;
+  }
+
+  .main-nav {
+    max-height: calc(100vh - 123px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item > .nav-link,
+  .dropdown-submenu-link {
+    width: 100%;
+    min-height: auto;
+    padding: 13px 0;
+  }
+
+  /* Neutralise le hover desktop sur écran tactile. */
+  .nav-item:hover > .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 8px 18px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .nav-item.submenu-open > .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    white-space: normal;
+  }
+
+  .dropdown-submenu {
+    width: 100%;
+  }
+
+  .dropdown-submenu-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 6px 18px;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .dropdown-submenu:hover .dropdown-submenu-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown-submenu.submenu-open > .dropdown-submenu-menu {
+    display: block;
+  }
+
+  .dropdown-submenu-link span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .dropdown-submenu.submenu-open > .dropdown-submenu-link span {
+    transform: rotate(90deg);
+  }
+}
+/* =========================================================
+   RECHERCHE
+========================================================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* HEADER */
+
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.header-search-form {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d8e0e6;
+  border-radius: 8px;
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+.header-search-form input {
+  width: 135px;
+
+  padding: 9px 8px 9px 12px;
+
+  border: 0;
+  outline: 0;
+
+  font: inherit;
+  font-size: 13px;
+
+  background: transparent;
+}
+
+.header-search-form input:focus {
+  width: 190px;
+}
+
+.header-search-button {
+  width: 40px;
+  height: 38px;
+
+  border: 0;
+
+  cursor: pointer;
+
+  background: transparent;
+
+  font-size: 17px;
+}
+
+
+/* PAGE RECHERCHE */
+
+.site-search-page {
+  display: flex;
+  gap: 12px;
+
+  max-width: 850px;
+
+  margin: 0 auto 50px;
+}
+
+.site-search-page input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 16px 18px;
+
+  border: 1px solid #ccd6dd;
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 17px;
+
+  outline: none;
+}
+
+.site-search-page input:focus {
+  border-color: #173752;
+}
+
+
+.search-results-heading {
+  margin-bottom: 25px;
+}
+
+
+.search-results {
+  display: grid;
+  gap: 14px;
+}
+
+
+.search-result {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #e0e5e9;
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.search-result:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, .08);
+}
+
+
+.search-result-type {
+  display: inline-block;
+
+  margin-bottom: 5px;
+
+  color: #b8432e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+
+.search-result h3 {
+  margin: 0 0 7px;
+
+  color: #173752;
+}
+
+
+.search-result p {
+  margin: 0;
+
+  color: #52687a;
+}
+
+
+.search-result-arrow {
+  flex-shrink: 0;
+
+  color: #173752;
+
+  font-size: 24px;
+}
+
+
+.search-empty {
+  padding: 35px;
+
+  border-radius: 10px;
+
+  background: #f4f6f8;
+
+  text-align: center;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .nav-search {
+    width: 100%;
+
+    padding: 12px 0;
+  }
+
+  .header-search-form {
+    width: 100%;
+  }
+
+  .header-search-form input,
+  .header-search-form input:focus {
+    width: 100%;
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .site-search-page {
+    flex-direction: column;
+  }
+
+  .site-search-page .btn {
+    width: 100%;
+  }
+
+  .search-result {
+    padding: 18px;
   }
 
 }

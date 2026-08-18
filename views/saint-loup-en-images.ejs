@@ -1,0 +1,318 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <section class="page-hero">
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        Découvrir la commune
+      </span>
+
+      <h1>Saint-Loup en images</h1>
+
+      <p>
+        Découvrez Saint-Loup-Cammas à travers quelques images
+        de son patrimoine, de ses équipements et de ses espaces de vie.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================
+       GALERIE
+  ====================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          Notre commune
+        </span>
+
+        <h2>Saint-Loup-Cammas en images</h2>
+
+        <p>
+          Cliquez sur une photo pour l’agrandir
+          et utilisez les flèches pour parcourir la galerie.
+        </p>
+
+      </div>
+
+
+      <div class="saint-loup-gallery">
+
+        <% for (let i = 54; i <= 77; i++) { %>
+
+          <button
+            type="button"
+            class="saint-loup-photo"
+            data-image="/images/saint-loup/<%= i %>.jpg"
+            aria-label="Agrandir la photo <%= i - 53 %>"
+          >
+
+            <img
+              src="/images/saint-loup/<%= i %>.jpg"
+              alt="Saint-Loup-Cammas"
+              loading="lazy"
+            >
+
+          </button>
+
+        <% } %>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       LIGHTBOX
+  ====================================== -->
+
+  <div
+    id="saintLoupLightbox"
+    class="saint-loup-lightbox"
+  >
+
+    <!-- FERMER -->
+
+    <button
+      type="button"
+      id="saintLoupLightboxClose"
+      class="saint-loup-lightbox-close"
+      aria-label="Fermer la photo"
+    >
+      ×
+    </button>
+
+
+    <!-- PRÉCÉDENT -->
+
+    <button
+      type="button"
+      id="saintLoupPrev"
+      class="saint-loup-lightbox-nav saint-loup-lightbox-prev"
+      aria-label="Photo précédente"
+    >
+      ‹
+    </button>
+
+
+    <!-- SUIVANT -->
+
+    <button
+      type="button"
+      id="saintLoupNext"
+      class="saint-loup-lightbox-nav saint-loup-lightbox-next"
+      aria-label="Photo suivante"
+    >
+      ›
+    </button>
+
+
+    <!-- IMAGE AGRANDIE -->
+
+    <img
+      id="saintLoupLightboxImage"
+      src=""
+      alt="Photo agrandie de Saint-Loup-Cammas"
+    >
+
+  </div>
+
+</main>
+
+
+<!-- =====================================
+     SCRIPT GALERIE
+====================================== -->
+
+<script>
+
+  const photos =
+    [...document.querySelectorAll(".saint-loup-photo")];
+
+  const lightbox =
+    document.getElementById("saintLoupLightbox");
+
+  const lightboxImage =
+    document.getElementById("saintLoupLightboxImage");
+
+  const closeButton =
+    document.getElementById("saintLoupLightboxClose");
+
+  const prevButton =
+    document.getElementById("saintLoupPrev");
+
+  const nextButton =
+    document.getElementById("saintLoupNext");
+
+
+  let currentIndex = 0;
+
+
+  /* =====================================
+     AFFICHER UNE PHOTO
+  ====================================== */
+
+  function afficherPhoto(index) {
+
+    if (index < 0) {
+      index = photos.length - 1;
+    }
+
+    if (index >= photos.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    const image =
+      photos[currentIndex].getAttribute("data-image");
+
+    lightboxImage.src = image;
+
+  }
+
+
+  /* =====================================
+     OUVRIR
+  ====================================== */
+
+  photos.forEach((photo, index) => {
+
+    photo.addEventListener("click", () => {
+
+      currentIndex = index;
+
+      afficherPhoto(currentIndex);
+
+      lightbox.style.display = "flex";
+
+      document.body.style.overflow = "hidden";
+
+    });
+
+  });
+
+
+  /* =====================================
+     FERMER
+  ====================================== */
+
+  function fermerLightbox() {
+
+    lightbox.style.display = "none";
+
+    lightboxImage.src = "";
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  closeButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    fermerLightbox();
+
+  });
+
+
+  /* =====================================
+     PHOTO PRÉCÉDENTE
+  ====================================== */
+
+  prevButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    afficherPhoto(currentIndex - 1);
+
+  });
+
+
+  /* =====================================
+     PHOTO SUIVANTE
+  ====================================== */
+
+  nextButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    afficherPhoto(currentIndex + 1);
+
+  });
+
+
+  /* =====================================
+     CLIC SUR LE FOND
+  ====================================== */
+
+  lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+
+      fermerLightbox();
+
+    }
+
+  });
+
+
+  /* Empêche le clic sur l'image
+     de fermer la lightbox */
+
+  lightboxImage.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+  });
+
+
+  /* =====================================
+     CLAVIER
+  ====================================== */
+
+  document.addEventListener("keydown", (event) => {
+
+    if (lightbox.style.display !== "flex") {
+      return;
+    }
+
+    if (event.key === "Escape") {
+
+      fermerLightbox();
+
+    }
+
+    if (event.key === "ArrowLeft") {
+
+      afficherPhoto(currentIndex - 1);
+
+    }
+
+    if (event.key === "ArrowRight") {
+
+      afficherPhoto(currentIndex + 1);
+
+    }
+
+  });
+
+</script>
+
+
+<%- include("partials/footer") %>

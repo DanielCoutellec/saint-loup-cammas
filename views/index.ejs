@@ -2,62 +2,71 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- =====================================
+       HERO
+  ====================================== -->
 
-  <section class="hero hero-slider">
+  <section class="home-hero-slider">
 
-    <div class="hero-slides">
+    <div
+      class="home-hero-slide active"
+      style="background-image: url('/images/hero/mairie.jpg');"
+    ></div>
 
-      <div
-        class="hero-slide active"
-        style="background-image: url('/images/hero/mairie.jpg');"
-      ></div>
+    <div
+      class="home-hero-slide"
+      style="background-image: url('/images/hero/mairie2.jpg');"
+    ></div>
 
-      <div
-        class="hero-slide"
-        style="background-image: url('/images/hero/mairie2.jpg');"
-      ></div>
+    <div
+      class="home-hero-slide"
+      style="background-image: url('/images/hero/mairie3.jpg');"
+    ></div>
 
-      <div
-        class="hero-slide"
-        style="background-image: url('/images/hero/mairie3.jpg');"
-      ></div>
+    <div
+      class="home-hero-slide"
+      style="background-image: url('/images/hero/courses.jpg');"
+    ></div>
 
-      <div
-        class="hero-slide"
-        style="background-image: url('/images/hero/courses.jpg');"
-      ></div>
-
-      <div
-        class="hero-slide"
-        style="background-image: url('/images/hero/repas.jpg');"
-      ></div>
-
-    </div>
+    <div
+      class="home-hero-slide"
+      style="background-image: url('/images/hero/repas.jpg');"
+    ></div>
 
 
-    <div class="container hero-content">
+    <div class="home-hero-overlay"></div>
 
-      <p class="hero-kicker">
+
+    <div class="container home-hero-content">
+
+      <span class="section-eyebrow light">
         Bienvenue à
-      </p>
+      </span>
 
       <h1>
         Saint-Loup-Cammas
       </h1>
 
-      <p class="hero-intro">
-        Retrouvez les informations, services,
-        démarches et actualités de votre commune.
+      <p>
+        Retrouvez toutes les informations,
+        démarches, actualités et services
+        de votre commune.
       </p>
 
-      <div class="hero-actions">
 
-        <a href="/demarches" class="btn btn-primary">
+      <div class="home-hero-actions">
+
+        <a
+          href="/demarches"
+          class="btn btn-primary"
+        >
           Mes démarches
         </a>
 
-        <a href="/actualites" class="btn btn-secondary">
+        <a
+          href="/actualites"
+          class="btn btn-secondary"
+        >
           Actualités
         </a>
 
@@ -65,102 +74,61 @@
 
     </div>
 
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-
-        const slides = document.querySelectorAll(".hero-slide");
-
-        if (!slides.length) {
-          return;
-        }
-
-        let current = 0;
-
-        setInterval(() => {
-
-          slides[current].classList.remove("active");
-
-          current = (current + 1) % slides.length;
-
-          slides[current].classList.add("active");
-
-        }, 3000);
-
-      });
-    </script>
-
   </section>
 
 
-  <!-- INFORMATION MAIRIE -->
+  <!-- =====================================
+       INFORMATION MAIRIE
+  ====================================== -->
 
-  <section class="alert-section">
+  <section class="home-info-bar">
 
-    <div class="container">
+    <div class="container home-info-bar-inner">
 
-      <% if (infoMairie) { %>
+      <div class="home-info-label">
 
-        <a
-          href="/actualites/<%= infoMairie.slug %>"
-          class="municipal-alert"
-        >
+        <span class="home-info-icon">
+          !
+        </span>
 
-          <div class="alert-icon">
-            !
-          </div>
+        <strong>
+          Information mairie
+        </strong>
 
-          <div class="alert-content">
+      </div>
 
-            <strong>
-              <%= infoMairie.titre %>
-            </strong>
 
-            <p>
-              <%= infoMairie.resume %>
-            </p>
+      <div class="home-info-content">
 
-          </div>
+        <strong>
+          Plan canicule
+        </strong>
 
-          <div class="alert-arrow">
-            →
-          </div>
+        <span>
+          Retrouvez les recommandations utiles
+          en période de fortes chaleurs.
+        </span>
 
-        </a>
+      </div>
 
-      <% } else { %>
 
-        <div class="municipal-alert">
-
-          <div class="alert-icon">
-            !
-          </div>
-
-          <div>
-
-            <strong>
-              Information mairie
-            </strong>
-
-            <p>
-              Retrouvez les informations importantes
-              et les alertes de la commune.
-            </p>
-
-          </div>
-
-        </div>
-
-      <% } %>
+      <a
+        href="/plan-canicule"
+        class="home-info-link"
+      >
+        En savoir plus →
+      </a>
 
     </div>
 
   </section>
 
 
-  <!-- ACCÈS RAPIDES -->
+  <!-- =====================================
+       ACCÈS RAPIDES
+  ====================================== -->
 
-  <section class="quick-access section">
+  <section class="section">
 
     <div class="container">
 
@@ -175,113 +143,200 @@
         </h2>
 
         <p>
-          Les principaux services municipaux,
-          accessibles en quelques clics.
+          Retrouvez rapidement les principales
+          informations et démarches utiles.
         </p>
 
       </div>
 
 
-      <div class="quick-grid">
-
-        <a href="/demarches" class="quick-card">
-
-          <span class="quick-icon">
-            📄
-          </span>
-
-          <strong>
-            Démarches administratives
-          </strong>
-
-          <span>
-            État civil, élections et documents.
-          </span>
-
-        </a>
+      <div class="demarches-grid">
 
 
-        <a href="/urbanisme" class="quick-card">
+        <!-- DÉMARCHES EN LIGNE -->
 
-          <span class="quick-icon">
-            🏗️
-          </span>
+        <a
+          href="/demarches"
+          class="demarche-card"
+        >
 
-          <strong>
-            Urbanisme
-          </strong>
+          <div class="demarche-icon">
+            📋
+          </div>
 
-          <span>
-            PLU, travaux et autorisations.
-          </span>
+          <div>
+
+            <h3>
+              Démarches en ligne
+            </h3>
+
+            <p>
+              État civil, élections,
+              formulaires et formalités administratives.
+            </p>
+
+            <span>
+              Effectuer une démarche →
+            </span>
+
+          </div>
 
         </a>
 
 
-        <a href="/enfance" class="quick-card">
+        <!-- VIE QUOTIDIENNE -->
 
-          <span class="quick-icon">
-            🎓
-          </span>
+        <a
+          href="/vie-quotidienne"
+          class="demarche-card"
+        >
 
-          <strong>
-            École & enfance
-          </strong>
+          <div class="demarche-icon">
+            🏠
+          </div>
 
-          <span>
-            École, restauration et accueils de loisirs.
-          </span>
+          <div>
+
+            <h3>
+              Vie quotidienne
+            </h3>
+
+            <p>
+              Transports, santé, solidarité
+              et services utiles au quotidien.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
 
         </a>
 
 
-        <a href="/agenda" class="quick-card">
+        <!-- AGENDA -->
 
-          <span class="quick-icon">
+        <a
+          href="/agenda"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
             📅
-          </span>
+          </div>
 
-          <strong>
-            Agenda
-          </strong>
+          <div>
 
-          <span>
-            Retrouvez les événements de la commune.
-          </span>
+            <h3>
+              Agenda
+            </h3>
 
-        </a>
+            <p>
+              Les prochains événements,
+              animations et manifestations
+              de Saint-Loup-Cammas.
+            </p>
 
+            <span>
+              Voir l'agenda →
+            </span>
 
-        <a href="/associations" class="quick-card">
-
-          <span class="quick-icon">
-            👥
-          </span>
-
-          <strong>
-            Associations
-          </strong>
-
-          <span>
-            Sport, culture et vie associative.
-          </span>
+          </div>
 
         </a>
 
 
-        <a href="/contact" class="quick-card">
+        <!-- ÉCOLE & ENFANCE -->
 
-          <span class="quick-icon">
-            📍
-          </span>
+        <a
+          href="/enfance"
+          class="demarche-card"
+        >
 
-          <strong>
-            Contact & accès
-          </strong>
+          <div class="demarche-icon">
+            🎒
+          </div>
 
-          <span>
-            Horaires et coordonnées de la mairie.
-          </span>
+          <div>
+
+            <h3>
+              École & Enfance
+            </h3>
+
+            <p>
+              École, crèche, restauration scolaire,
+              accueils de loisirs et services aux familles.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- URBANISME / PLU -->
+
+        <a
+          href="/urbanisme"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            🏗️
+          </div>
+
+          <div>
+
+            <h3>
+              Urbanisme & PLU
+            </h3>
+
+            <p>
+              PLU, permis de construire,
+              déclarations préalables
+              et informations d'urbanisme.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- NUMÉROS UTILES -->
+
+        <a
+          href="/numeros-utiles"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            ☎️
+          </div>
+
+          <div>
+
+            <h3>
+              Numéros utiles
+            </h3>
+
+            <p>
+              Urgences, santé, sécurité
+              et principaux contacts utiles.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
 
         </a>
 
@@ -292,263 +347,298 @@
   </section>
 
 
-  <!-- ACTUALITÉS -->
+  <!-- =====================================
+       ACTUALITÉS
+  ====================================== -->
 
-  <section class="news-section section">
+  <section class="section useful-light-section">
 
     <div class="container">
 
-      <div class="section-heading section-heading-row">
+      <div class="section-heading">
 
-        <div>
+        <span class="section-eyebrow">
+          À la une
+        </span>
 
-          <span class="section-eyebrow">
-            À la une
-          </span>
+        <h2>
+          Actualités
+        </h2>
 
-          <h2>
-            Actualités
-          </h2>
+        <p>
+          Retrouvez les dernières informations
+          de Saint-Loup-Cammas.
+        </p>
 
-        </div>
+      </div>
 
-        <a href="/actualites" class="text-link">
+
+      <div class="demarches-grid">
+
+
+        <!-- ALERTE EAU -->
+
+        <a
+          href="/actualites/alerte-prelevement-eau"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            💧
+          </div>
+
+          <div>
+
+            <span class="section-eyebrow">
+              Information
+            </span>
+
+            <h3>
+              Alerte prélèvement d'eau
+            </h3>
+
+            <p>
+              Informations et recommandations
+              concernant l'utilisation de l'eau.
+            </p>
+
+            <span>
+              En savoir plus →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- INSEE -->
+
+        <a
+          href="/actualites/enquete-insee-emploi-du-temps"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            📊
+          </div>
+
+          <div>
+
+            <span class="section-eyebrow">
+              Enquête
+            </span>
+
+            <h3>
+              Enquête INSEE – Emploi du temps
+            </h3>
+
+            <p>
+              Une enquête INSEE est menée
+              au cours de l'année 2026.
+            </p>
+
+            <span>
+              En savoir plus →
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <div style="margin-top: 30px;">
+
+        <a
+          href="/actualites"
+          class="btn btn-primary"
+        >
           Toutes les actualités →
         </a>
 
       </div>
 
-
-      <div class="news-grid">
-
-        <% actualitesAccueil.forEach(actualite => { %>
-
-          <article class="news-card">
-
-            <% if (actualite.image) { %>
-
-              <div class="news-image">
-
-                <img
-                  src="<%= actualite.image %>"
-                  alt="<%= actualite.titre %>"
-                >
-
-              </div>
-
-            <% } %>
-
-
-            <div class="news-content">
-
-              <span class="news-date">
-                <%= actualite.categorie %>
-              </span>
-
-              <h3>
-                <%= actualite.titre %>
-              </h3>
-
-              <p>
-                <%= actualite.resume %>
-              </p>
-
-              <a href="/actualites/<%= actualite.slug %>">
-                En savoir plus →
-              </a>
-
-            </div>
-
-          </article>
-
-        <% }) %>
-
-      </div>
-
     </div>
 
   </section>
 
 
-  <!-- VIE LOCALE -->
+  <!-- =====================================
+       DÉCOUVRIR SAINT-LOUP-CAMMAS
+  ====================================== -->
 
-  <section class="life-section section">
-
-    <div class="container life-grid">
-
-      <div class="life-content">
-
-        <span class="section-eyebrow">
-          Notre commune
-        </span>
-
-        <h2>
-          Vivre à Saint-Loup-Cammas
-        </h2>
-
-        <p>
-          Retrouvez toutes les informations utiles
-          concernant la vie quotidienne, les équipements,
-          les associations, les transports et les services
-          de proximité.
-        </p>
-
-
-        <div class="life-links">
-
-          <a href="/associations">
-            Associations
-          </a>
-
-          <a href="/transports">
-            Transports
-          </a>
-
-          <a href="/salles-municipales">
-            Salles municipales
-          </a>
-
-          <a href="/commerces-services">
-            Commerces et services
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- AGENDA -->
-
-  <section class="agenda-section section">
+  <section class="section">
 
     <div class="container">
 
-      <div class="section-heading section-heading-row">
+      <div class="section-heading">
 
-        <div>
+        <span class="section-eyebrow">
+          À découvrir
+        </span>
 
-          <span class="section-eyebrow">
-            À vos agendas
-          </span>
+        <h2>
+          Saint-Loup-Cammas au quotidien
+        </h2>
 
-          <h2>
-            Prochains événements
-          </h2>
+        <p>
+          Découvrez la commune,
+          sa vie locale et son territoire.
+        </p>
 
-        </div>
+      </div>
 
-        <a href="/agenda" class="text-link">
-          Tout l'agenda →
+
+      <div class="demarches-grid">
+
+
+        <!-- PATRIMOINE -->
+
+        <a
+          href="/commune-patrimoine"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            ⛪
+          </div>
+
+          <div>
+
+            <h3>
+              Commune & patrimoine
+            </h3>
+
+            <p>
+              Découvrez l'histoire,
+              le patrimoine et les paysages
+              de Saint-Loup-Cammas.
+            </p>
+
+            <span>
+              Découvrir →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- VIE LOCALE -->
+
+        <a
+          href="/vie-locale"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            🏘️
+          </div>
+
+          <div>
+
+            <h3>
+              Vie locale
+            </h3>
+
+            <p>
+              Associations, commerces,
+              équipements et services
+              de proximité.
+            </p>
+
+            <span>
+              Consulter →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- INTERCOMMUNALITÉ -->
+
+        <a
+          href="/intercommunalite"
+          class="demarche-card"
+        >
+
+          <div class="demarche-icon">
+            🤝
+          </div>
+
+          <div>
+
+            <h3>
+              Coteaux Bellevue
+            </h3>
+
+            <p>
+              Retrouvez les services
+              de la Communauté de communes
+              des Coteaux Bellevue.
+            </p>
+
+            <span>
+              Découvrir →
+            </span>
+
+          </div>
+
         </a>
 
       </div>
 
-
-      <div class="agenda-list">
-
-        <% agendaAccueil.forEach(event => { %>
-
-          <a
-            href="/agenda/<%= event.slug %>"
-            class="agenda-item"
-          >
-
-            <div class="agenda-date">
-
-              <strong>
-                <%= event.jour %>
-              </strong>
-
-              <span>
-                <%= event.mois %>
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                <%= event.titre %>
-              </h3>
-
-              <p>
-                <%= event.description %>
-              </p>
-
-            </div>
-
-          </a>
-
-        <% }) %>
-
-      </div>
-
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
 
-  <section class="contact-section">
+  <section class="demarches-info">
 
-    <div class="container contact-grid">
+    <div class="container demarches-info-grid">
 
       <div>
 
         <span class="section-eyebrow light">
-          Nous contacter
+          Votre mairie
         </span>
 
         <h2>
-          Mairie de Saint-Loup-Cammas
+          Besoin d'un renseignement ?
         </h2>
 
-        <p class="contact-phone">
-          05 34 27 28 50
+        <p>
+          Les services municipaux sont
+          à votre disposition pour répondre
+          à vos questions et vous accompagner
+          dans vos démarches.
         </p>
 
       </div>
 
 
-      <div class="hours">
+      <div class="demarches-contact">
 
         <strong>
-          Horaires d'ouverture
+          Mairie de Saint-Loup-Cammas
         </strong>
 
-        <p>
-          Du lundi au vendredi<br>
-          9h00 – 12h00<br>
-          13h30 – 17h30
-        </p>
-
-        <p>
-          Samedi<br>
-          8h30 – 12h00
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <a href="tel:0534272850" class="btn btn-light">
-          Nous contacter
+        <a href="tel:0534272850">
+          05 34 27 28 50
         </a>
 
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Mairie+Saint-Loup-Cammas"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-outline-light"
-        >
-          Voir l'accès
+        <a href="mailto:mairie@mairie-saintloupcammas.fr">
+          mairie@mairie-saintloupcammas.fr
+        </a>
+
+        <a href="/contact">
+          Contact & accès →
         </a>
 
       </div>
@@ -557,6 +647,41 @@
 
   </section>
 
+
 </main>
+
+
+<!-- =====================================
+     SLIDER
+====================================== -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const slides =
+      document.querySelectorAll(".home-hero-slide");
+
+    if (!slides.length) {
+      return;
+    }
+
+    let currentSlide = 0;
+
+    setInterval(() => {
+
+      slides[currentSlide].classList.remove("active");
+
+      currentSlide =
+        (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add("active");
+
+    }, 3000);
+
+  });
+
+</script>
+
 
 <%- include("partials/footer") %>

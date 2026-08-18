@@ -2,25 +2,36 @@
 
 <main>
 
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
   <section class="page-hero">
+
     <div class="container">
 
       <span class="section-eyebrow light">
-        Saint-Loup-Cammas
+        La commune vous informe
       </span>
 
       <h1>Actualités</h1>
 
       <p>
         Retrouvez les dernières informations,
-        événements et actualités de la commune.
+        alertes et actualités de Saint-Loup-Cammas.
       </p>
 
     </div>
+
   </section>
 
 
-  <section class="section news-section">
+  <!-- =====================================
+       ACTUALITÉS
+  ====================================== -->
+
+  <section class="section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -29,41 +40,60 @@
           À la une
         </span>
 
-        <h2>
-          Les dernières actualités
-        </h2>
+        <h2>Les dernières actualités</h2>
 
         <p>
-          Vie municipale, événements, travaux et informations pratiques :
-          suivez l'actualité de Saint-Loup-Cammas.
+          Informations municipales,
+          alertes et événements de la commune.
         </p>
 
       </div>
 
 
-      <div class="news-grid">
+      <div class="demarches-grid">
 
         <% actualites.forEach(actualite => { %>
 
-          <article class="news-card">
+          <%
+            // Le Plan canicule possède désormais
+            // sa propre page dédiée.
+            const lien =
+              actualite.slug === "plan-canicule"
+                ? "/plan-canicule"
+                : "/actualites/" + actualite.slug;
+          %>
 
-            <% if (actualite.image) { %>
+          <a
+            href="<%= lien %>"
+            class="demarche-card"
+          >
 
-              <div class="news-image">
+            <div class="demarche-icon">
 
-                <img
-                  src="<%= actualite.image %>"
-                  alt="<%= actualite.titre %>"
-                >
+              <% if (actualite.slug === "plan-canicule") { %>
 
-              </div>
+                ☀️
 
-            <% } %>
+              <% } else if (actualite.slug === "alerte-prelevement-eau") { %>
+
+                💧
+
+              <% } else if (actualite.slug === "enquete-insee-emploi-du-temps") { %>
+
+                📊
+
+              <% } else { %>
+
+                📰
+
+              <% } %>
+
+            </div>
 
 
-            <div class="news-content">
+            <div>
 
-              <span class="news-date">
+              <span class="section-eyebrow">
                 <%= actualite.categorie %>
               </span>
 
@@ -75,38 +105,43 @@
                 <%= actualite.resume %>
               </p>
 
-              <a href="/actualites/<%= actualite.slug %>">
-                Lire la suite →
-              </a>
+              <span>
+                En savoir plus →
+              </span>
 
             </div>
 
-          </article>
+          </a>
 
         <% }) %>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <section class="section">
+  <!-- =====================================
+       AGENDA
+  ====================================== -->
+
+  <section class="section useful-light-section">
+
     <div class="container">
 
       <div class="section-heading">
 
         <span class="section-eyebrow">
-          À consulter
+          À vos agendas
         </span>
 
-        <h2>
-          Informations de la commune
-        </h2>
+        <h2>Les événements de la commune</h2>
 
         <p>
-          Retrouvez également l'agenda,
-          les publications et les informations pratiques.
+          Retrouvez les prochaines manifestations,
+          animations et rendez-vous
+          organisés à Saint-Loup-Cammas.
         </p>
 
       </div>
@@ -114,10 +149,13 @@
 
       <div class="demarches-grid">
 
-        <a href="/agenda" class="demarche-card">
+        <a
+          href="/agenda"
+          class="demarche-card"
+        >
 
           <div class="demarche-icon">
-            📆
+            📅
           </div>
 
           <div>
@@ -126,7 +164,7 @@
 
             <p>
               Consultez les prochains événements
-              et manifestations de Saint-Loup-Cammas.
+              et manifestations de la commune.
             </p>
 
             <span>
@@ -137,61 +175,16 @@
 
         </a>
 
-
-        <a href="/publications" class="demarche-card">
-
-          <div class="demarche-icon">
-            📰
-          </div>
-
-          <div>
-
-            <h3>Publications</h3>
-
-            <p>
-              Retrouvez les bulletins municipaux
-              et les publications de la commune.
-            </p>
-
-            <span>
-              Consulter →
-            </span>
-
-          </div>
-
-        </a>
-
-
-        <a href="/travaux" class="demarche-card">
-
-          <div class="demarche-icon">
-            🚧
-          </div>
-
-          <div>
-
-            <h3>
-              Travaux & informations
-            </h3>
-
-            <p>
-              Retrouvez les travaux, perturbations
-              et informations pratiques concernant la commune.
-            </p>
-
-            <span>
-              Consulter →
-            </span>
-
-          </div>
-
-        </a>
-
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
 
   <section class="demarches-info">
 
@@ -200,17 +193,17 @@
       <div>
 
         <span class="section-eyebrow light">
-          Information municipale
+          Votre mairie
         </span>
 
         <h2>
-          Restez informé
+          Besoin d'un renseignement ?
         </h2>
 
         <p>
-          Retrouvez régulièrement sur cette page
-          les informations et communications
-          de la mairie de Saint-Loup-Cammas.
+          Pour toute question concernant
+          une information municipale,
+          contactez les services de la mairie.
         </p>
 
       </div>
@@ -224,6 +217,14 @@
 
         <a href="tel:0534272850">
           05 34 27 28 50
+        </a>
+
+        <a href="mailto:mairie@mairie-saintloupcammas.fr">
+          mairie@mairie-saintloupcammas.fr
+        </a>
+
+        <a href="/contact">
+          Contact & accès →
         </a>
 
       </div>

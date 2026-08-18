@@ -1,5 +1,131 @@
 [
   {
+    "slug": "voeux-du-maire-2026",
+    "date": "2026-01-09",
+    "jour": "09",
+    "mois": "JANV.",
+    "titre": "Vœux du Maire",
+    "description": "Cérémonie des vœux du Maire.",
+    "contenu": "La cérémonie des vœux du Maire est organisée à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "repas-des-aines-2026",
+    "date": "2026-01-10",
+    "jour": "10",
+    "mois": "JANV.",
+    "titre": "Repas des aînés",
+    "description": "Repas des aînés de la commune.",
+    "contenu": "Le repas des aînés est organisé à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "loto-gerbe-dor-janvier-2026",
+    "date": "2026-01-24",
+    "jour": "24",
+    "mois": "JANV.",
+    "titre": "Loto de la Gerbe d'Or",
+    "description": "Organisé par la Gerbe d'Or.",
+    "contenu": "Un loto est organisé par la Gerbe d'Or."
+  },
+  {
+    "slug": "soiree-aligot-2026",
+    "date": "2026-02-28",
+    "jour": "28",
+    "mois": "FÉV.",
+    "titre": "Soirée Aligot",
+    "description": "Soirée Aligot.",
+    "contenu": "Une soirée Aligot est organisée à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "loto-parents-eleves-2026",
+    "date": "2026-03-22",
+    "jour": "22",
+    "mois": "MARS",
+    "titre": "Loto des Parents d'Élèves",
+    "description": "Organisé par les Parents d'Élèves.",
+    "contenu": "Un loto est organisé par les Parents d'Élèves."
+  },
+  {
+    "slug": "master-classe-gerbe-dor-2026",
+    "date": "2026-03-28",
+    "jour": "28",
+    "mois": "MARS",
+    "titre": "Master classe de la Gerbe d'Or",
+    "description": "Week-end des 28 et 29 mars.",
+    "contenu": "Une master classe est organisée par la Gerbe d'Or les 28 et 29 mars."
+  },
+  {
+    "slug": "ecole-en-scene-2026",
+    "date": "2026-04-10",
+    "jour": "10",
+    "mois": "AVR.",
+    "titre": "École en scène",
+    "description": "Organisée par les Parents d'Élèves.",
+    "contenu": "École en scène est organisée par les Parents d'Élèves."
+  },
+  {
+    "slug": "vide-grenier-avril-2026",
+    "date": "2026-04-19",
+    "jour": "19",
+    "mois": "AVR.",
+    "titre": "Vide-grenier",
+    "description": "Organisé par Anim'St Loup.",
+    "contenu": "Un vide-grenier est organisé par Anim'St Loup."
+  },
+  {
+    "slug": "commemoration-8-mai-2026",
+    "date": "2026-05-08",
+    "jour": "08",
+    "mois": "MAI",
+    "titre": "Commémoration du 8 mai",
+    "description": "Commémoration à Saint-Loup-Cammas.",
+    "contenu": "Une cérémonie de commémoration du 8 mai est organisée à Saint-Loup-Cammas."
+  },
+  {
+    "slug": "concert-printemps-gerbe-dor-2026",
+    "date": "2026-05-29",
+    "jour": "29",
+    "mois": "MAI",
+    "titre": "Concert de printemps",
+    "description": "Organisé par la Gerbe d'Or.",
+    "contenu": "Le concert de printemps est organisé par la Gerbe d'Or."
+  },
+  {
+    "slug": "festival-sosies-2026",
+    "date": "2026-06-13",
+    "jour": "13",
+    "mois": "JUIN",
+    "titre": "Festival sosies",
+    "description": "Soirée organisée par Anim'St Loup.",
+    "contenu": "Une soirée festival sosies est organisée par Anim'St Loup."
+  },
+  {
+    "slug": "gala-danse-foyer-rural-2026",
+    "date": "2026-06-26",
+    "jour": "26",
+    "mois": "JUIN",
+    "titre": "Gala de danse du Foyer Rural",
+    "description": "Week-end des 26, 27 et 28 juin.",
+    "contenu": "Le gala de danse du Foyer Rural se déroule les 26, 27 et 28 juin."
+  },
+  {
+    "slug": "tables-gourmandes-2026",
+    "date": "2026-07-02",
+    "jour": "02",
+    "mois": "JUIL.",
+    "titre": "Tables gourmandes",
+    "description": "Soirée organisée par Anim'St Loup.",
+    "contenu": "Une soirée Tables gourmandes est organisée par Anim'St Loup."
+  },
+  {
+    "slug": "fete-nationale-2026",
+    "date": "2026-07-13",
+    "jour": "13",
+    "mois": "JUIL.",
+    "titre": "Fête nationale",
+    "description": "Avec Anim'St Loup.",
+    "contenu": "La fête nationale est organisée avec Anim'St Loup."
+  },
+  {
     "slug": "concours-petanque-aout-2026",
     "date": "2026-08-29",
     "jour": "29",
@@ -43,6 +169,24 @@
     "titre": "Master class Zumba",
     "description": "Organisée par le Foyer Rural.",
     "contenu": "Une Master class Zumba est organisée par le Foyer Rural."
+  },
+  {
+    "slug": "soiree-animst-loup-novembre-2026",
+    "date": "2026-11-07",
+    "jour": "07",
+    "mois": "NOV.",
+    "titre": "Soirée Anim'St Loup",
+    "description": "Organisée par Anim'St Loup.",
+    "contenu": "Une soirée est organisée par Anim'St Loup."
+  },
+  {
+    "slug": "commemoration-11-novembre-2026",
+    "date": "2026-11-11",
+    "jour": "11",
+    "mois": "NOV.",
+    "titre": "Commémoration du 11 novembre",
+    "description": "Commémoration de l'armistice à Pechbonnieu.",
+    "contenu": "La commémoration du 11 novembre est organisée à Pechbonnieu."
   },
   {
     "slug": "zinzins-bitume-2026",

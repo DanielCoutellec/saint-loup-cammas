@@ -2,28 +2,294 @@
 
 <main>
 
-  <section class="page-hero">
+  <!-- =====================================
+       HERO
+  ====================================== -->
 
+  <section class="page-hero">
     <div class="container">
 
       <span class="section-eyebrow light">
-        Publications
+        La mairie
       </span>
 
-      <h1>
-        Bulletin municipal
-      </h1>
+      <h1>Bulletins municipaux & Lettres du Maire</h1>
 
       <p>
-        Retrouvez les bulletins municipaux
-        et les principales publications
-        de Saint-Loup-Cammas.
+        Retrouvez les publications municipales
+        de Saint-Loup-Cammas et consultez
+        les archives disponibles.
       </p>
 
     </div>
-
   </section>
 
+
+  <!-- =====================================
+       INTRODUCTION
+  ====================================== -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          Publications
+        </span>
+
+        <h2>Les publications de la commune</h2>
+
+        <p>
+          Consultez les Bulletins municipaux,
+          les anciens numéros d'Horizons Saint-Loup-Cammas
+          ainsi que les Lettres du Maire.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================
+       DONNÉES
+  ====================================== -->
+
+  <%
+    const publications = [
+
+      {
+        annee: 2026,
+        titre: "La Lettre du Maire",
+        numero: "N°06",
+        periode: "Juin 2026",
+        fichier: "/documents/publications/2026-lettre-maire-06.pdf"
+      },
+
+      {
+        annee: 2025,
+        titre: "La Lettre du Maire",
+        numero: "N°05",
+        periode: "Juin 2025",
+        fichier: "/documents/publications/2025-lettre-maire-05.pdf"
+      },
+
+      {
+        annee: 2024,
+        titre: "Bulletin municipal",
+        numero: "N°22",
+        periode: "Décembre 2024",
+        fichier: "/documents/publications/2024-bulletin-municipal-22.pdf"
+      },
+
+      {
+        annee: 2024,
+        titre: "La Lettre du Maire",
+        numero: "N°04",
+        periode: "Juin 2024",
+        fichier: "/documents/publications/2024-lettre-maire-04.pdf"
+      },
+
+      {
+        annee: 2023,
+        titre: "Bulletin municipal",
+        numero: "N°21",
+        periode: "Décembre 2023",
+        fichier: "/documents/publications/2023-bulletin-municipal-21.pdf"
+      },
+
+      {
+        annee: 2023,
+        titre: "La Lettre du Maire",
+        numero: "N°03",
+        periode: "Juin 2023",
+        fichier: "/documents/publications/2023-lettre-maire-03.pdf"
+      },
+
+      {
+        annee: 2022,
+        titre: "Bulletin municipal",
+        numero: "N°20",
+        periode: "Décembre 2022",
+        fichier: "/documents/publications/2022-bulletin-municipal-20.pdf"
+      },
+
+      {
+        annee: 2022,
+        titre: "La Lettre du Maire",
+        numero: "N°02",
+        periode: "Juin 2022",
+        fichier: "/documents/publications/2022-lettre-maire-02.pdf"
+      },
+
+      {
+        annee: 2021,
+        titre: "Horizons Saint-Loup-Cammas",
+        numero: "N°19",
+        periode: "Décembre 2021",
+        fichier: "/documents/publications/2021-horizons-19.pdf"
+      },
+
+      {
+        annee: 2021,
+        titre: "La Lettre du Maire",
+        numero: "N°15",
+        periode: "Juin 2021",
+        fichier: "/documents/publications/2021-lettre-maire-15.pdf"
+      },
+
+      {
+        annee: 2020,
+        titre: "Horizons Saint-Loup-Cammas",
+        numero: "N°18",
+        periode: "Décembre 2020",
+        fichier: "/documents/publications/2020-horizons-18.pdf"
+      },
+
+      {
+        annee: 2019,
+        titre: "Horizons Saint-Loup-Cammas",
+        numero: "N°17",
+        periode: "Décembre 2019",
+        fichier: "/documents/publications/2019-horizons-17.pdf"
+      },
+
+      {
+        annee: 2019,
+        titre: "La Lettre du Maire",
+        numero: "N°14",
+        periode: "Juin 2019",
+        fichier: "/documents/publications/2019-lettre-maire-14.pdf"
+      },
+
+      {
+        annee: 2018,
+        titre: "Horizons Saint-Loup-Cammas",
+        numero: "N°16",
+        periode: "Décembre 2018",
+        fichier: "/documents/publications/2018-horizons-16.pdf"
+      },
+
+      {
+        annee: 2018,
+        titre: "La Lettre du Maire",
+        numero: "N°13",
+        periode: "Juin 2018",
+        fichier: "/documents/publications/2018-lettre-maire-13.pdf"
+      },
+
+      {
+        annee: 2017,
+        titre: "La Lettre du Maire",
+        numero: "N°12",
+        periode: "Juin 2017",
+        fichier: "/documents/publications/2017-lettre-maire-12.pdf"
+      },
+
+      {
+        annee: 2016,
+        titre: "La Lettre du Maire",
+        numero: "N°11",
+        periode: "Juin 2016",
+        fichier: "/documents/publications/2016-lettre-maire-11.pdf"
+      }
+
+    ];
+
+    const publicationsParAnnee = {};
+
+    publications.forEach(publication => {
+
+      if (!publicationsParAnnee[publication.annee]) {
+        publicationsParAnnee[publication.annee] = [];
+      }
+
+      publicationsParAnnee[publication.annee].push(publication);
+
+    });
+  %>
+
+
+  <!-- =====================================
+       PUBLICATIONS PAR ANNÉE
+  ====================================== -->
+
+  <% Object.keys(publicationsParAnnee)
+       .sort((a, b) => b - a)
+       .forEach((annee, index) => { %>
+
+    <section
+      class="section <%= index % 2 === 0 ? 'useful-light-section' : '' %>"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-eyebrow">
+            Archives
+          </span>
+
+          <h2><%= annee %></h2>
+
+        </div>
+
+
+        <div class="publication-list">
+
+          <% publicationsParAnnee[annee].forEach(publication => { %>
+
+            <div class="publication-row">
+
+              <div class="publication-info">
+
+                <div class="publication-icon">
+                  📰
+                </div>
+
+                <div>
+
+                  <strong>
+                    <%= publication.titre %>
+                  </strong>
+
+                  <span>
+                    <%= publication.numero %>
+                    ·
+                    <%= publication.periode %>
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <a
+                href="<%= publication.fichier %>"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                Consulter le PDF
+              </a>
+
+            </div>
+
+          <% }) %>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  <% }) %>
+
+
+  <!-- =====================================
+       PUBLICATIONS / AUTRES DOCUMENTS
+  ====================================== -->
 
   <section class="section">
 
@@ -32,64 +298,62 @@
       <div class="section-heading">
 
         <span class="section-eyebrow">
-          Publications municipales
+          La mairie
         </span>
 
-        <h2>
-          Les bulletins de la commune
-        </h2>
-
-        <p>
-          Consultez les bulletins municipaux
-          publiés par la mairie.
-        </p>
+        <h2>À consulter également</h2>
 
       </div>
 
 
-      <div class="documents-year">
+      <div class="demarches-grid">
 
-        <h3>
-          2026
-        </h3>
+        <a href="/publications" class="demarche-card">
 
-        <div class="documents-list">
+          <div class="demarche-icon">
+            📚
+          </div>
 
-          <div class="document-row">
+          <div>
 
-            <div>
+            <h3>Publications</h3>
 
-              <strong>
-                Bulletin municipal 2026
-              </strong>
+            <p>
+              Retrouvez les autres documents
+              et publications de la commune.
+            </p>
 
-              <span>
-                Document à intégrer
-              </span>
-
-            </div>
-
-            <span class="document-status">
-              À venir
+            <span>
+              Consulter →
             </span>
 
           </div>
 
-        </div>
-
-      </div>
+        </a>
 
 
-      <div class="documents-year">
+        <a href="/comptes-rendus" class="demarche-card">
 
-        <h3>
-          Archives
-        </h3>
+          <div class="demarche-icon">
+            🏛️
+          </div>
 
-        <p class="documents-note">
-          Les anciens bulletins municipaux
-          seront progressivement ajoutés dans cette rubrique.
-        </p>
+          <div>
+
+            <h3>Conseil municipal</h3>
+
+            <p>
+              Consultez les comptes rendus
+              et procès-verbaux des séances.
+            </p>
+
+            <span>
+              Voir les archives →
+            </span>
+
+          </div>
+
+        </a>
 
       </div>
 
@@ -98,6 +362,10 @@
   </section>
 
 
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
+
   <section class="demarches-info">
 
     <div class="container demarches-info-grid">
@@ -105,16 +373,15 @@
       <div>
 
         <span class="section-eyebrow light">
-          Documentation
+          Publications municipales
         </span>
 
-        <h2>
-          Vous recherchez un ancien bulletin ?
-        </h2>
+        <h2>Besoin d'un document ?</h2>
 
         <p>
-          Si le document recherché n'est pas encore disponible,
-          vous pouvez contacter la mairie.
+          Pour toute question concernant
+          une publication ou un document municipal,
+          contactez la mairie.
         </p>
 
       </div>
@@ -128,6 +395,10 @@
 
         <a href="tel:0534272850">
           05 34 27 28 50
+        </a>
+
+        <a href="/contact">
+          Contact & accès →
         </a>
 
       </div>

@@ -1,0 +1,432 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        La commune
+      </span>
+
+      <h1>Cartes postales</h1>
+
+      <p>
+        Découvrez Saint-Loup-Cammas autrefois
+        à travers une collection de photographies
+        et cartes postales anciennes.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       GALERIE
+  ====================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          Mémoire du village
+        </span>
+
+        <h2>Saint-Loup-Cammas autrefois</h2>
+
+        <p>
+          Cliquez sur une image pour l'agrandir,
+          puis utilisez les flèches pour parcourir
+          la collection.
+        </p>
+
+      </div>
+
+
+      <div class="postcards-grid">
+
+
+        <button type="button" class="postcard-item" data-index="0">
+          <img
+            src="/images/cartes-postales/abattoir.jpg"
+            alt="L'Abattoir"
+          >
+          <span class="postcard-title">
+            L'Abattoir
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="1">
+          <img
+            src="/images/cartes-postales/cabane.jpg"
+            alt="La Cabane"
+          >
+          <span class="postcard-title">
+            La Cabane
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="2">
+          <img
+            src="/images/cartes-postales/depot-camions.jpg"
+            alt="Le Dépôt de camions"
+          >
+          <span class="postcard-title">
+            Le Dépôt de camions
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="3">
+          <img
+            src="/images/cartes-postales/depot-armes.jpg"
+            alt="Le Dépôt d'armes"
+          >
+          <span class="postcard-title">
+            Le Dépôt d'armes
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="4">
+          <img
+            src="/images/cartes-postales/eglise-de-saint-loup-cammas.jpg"
+            alt="L'Église de Saint-Loup-Cammas"
+          >
+          <span class="postcard-title">
+            L'Église de Saint-Loup-Cammas
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="5">
+          <img
+            src="/images/cartes-postales/ferme-birbe.jpg"
+            alt="La Ferme Birbe"
+          >
+          <span class="postcard-title">
+            La Ferme Birbe
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="6">
+          <img
+            src="/images/cartes-postales/la-ferme-de-marins-lacroix.jpg"
+            alt="La Ferme de Marins-Lacroix"
+          >
+          <span class="postcard-title">
+            La Ferme de Marins-Lacroix
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="7">
+          <img
+            src="/images/cartes-postales/la-ferme-lamarande.jpg"
+            alt="La Ferme Lamarande"
+          >
+          <span class="postcard-title">
+            La Ferme Lamarande
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="8">
+          <img
+            src="/images/cartes-postales/la-maison-de-maitre.jpg"
+            alt="La Maison de maître"
+          >
+          <span class="postcard-title">
+            La Maison de maître
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="9">
+          <img
+            src="/images/cartes-postales/lamarande-ferme-moskot.jpg"
+            alt="Lamarande - Ferme Moskot"
+          >
+          <span class="postcard-title">
+            Lamarande – Ferme Moskot
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="10">
+          <img
+            src="/images/cartes-postales/le-hangar.jpg"
+            alt="Le Hangar"
+          >
+          <span class="postcard-title">
+            Le Hangar
+          </span>
+        </button>
+
+
+        <button type="button" class="postcard-item" data-index="11">
+          <img
+            src="/images/cartes-postales/lieu-dit-quercy.jpg"
+            alt="Lieu-dit Quercy"
+          >
+          <span class="postcard-title">
+            Lieu-dit Quercy
+          </span>
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       LIGHTBOX
+  ====================================== -->
+
+  <div
+    class="postcard-lightbox"
+    id="postcardLightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      type="button"
+      class="postcard-close"
+      aria-label="Fermer"
+    >
+      ×
+    </button>
+
+
+    <button
+      type="button"
+      class="postcard-prev"
+      aria-label="Image précédente"
+    >
+      ‹
+    </button>
+
+
+    <div class="postcard-lightbox-content">
+
+      <img
+        id="postcardLargeImage"
+        src=""
+        alt=""
+      >
+
+      <h3
+        class="postcard-lightbox-title"
+        id="postcardLightboxTitle"
+      ></h3>
+
+      <div
+        class="postcard-counter"
+        id="postcardCounter"
+      ></div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="postcard-next"
+      aria-label="Image suivante"
+    >
+      ›
+    </button>
+
+  </div>
+
+
+  <!-- =====================================
+       LIENS
+  ====================================== -->
+
+  <section class="demarches-info">
+
+    <div class="container demarches-info-grid">
+
+      <div>
+
+        <span class="section-eyebrow light">
+          La commune
+        </span>
+
+        <h2>Découvrir l'histoire locale</h2>
+
+        <p>
+          Retrouvez les autres pages consacrées
+          à l'histoire et au patrimoine
+          de Saint-Loup-Cammas.
+        </p>
+
+      </div>
+
+
+      <div class="demarches-contact">
+
+        <a href="/histoire">
+          Histoire →
+        </a>
+
+        <a href="/mairie-patrimoine">
+          La Mairie →
+        </a>
+
+        <a href="/ecole-patrimoine">
+          L'École →
+        </a>
+
+        <a href="/eglise">
+          L'Église →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const items = document.querySelectorAll(".postcard-item");
+  const lightbox = document.getElementById("postcardLightbox");
+  const largeImage = document.getElementById("postcardLargeImage");
+  const title = document.getElementById("postcardLightboxTitle");
+  const counter = document.getElementById("postcardCounter");
+
+  const closeButton = document.querySelector(".postcard-close");
+  const previousButton = document.querySelector(".postcard-prev");
+  const nextButton = document.querySelector(".postcard-next");
+
+  let currentIndex = 0;
+
+
+  function showImage(index) {
+
+    if (index < 0) {
+      index = items.length - 1;
+    }
+
+    if (index >= items.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    const item = items[currentIndex];
+    const image = item.querySelector("img");
+    const itemTitle = item.querySelector(".postcard-title");
+
+    largeImage.src = image.getAttribute("src");
+    largeImage.alt = image.getAttribute("alt");
+
+    if (itemTitle) {
+      title.textContent = itemTitle.textContent.trim();
+    }
+
+    counter.textContent =
+      (currentIndex + 1) + " / " + items.length;
+  }
+
+
+  function openLightbox(index) {
+
+    showImage(index);
+
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+  }
+
+
+  function closeLightbox() {
+
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+  }
+
+
+  items.forEach(function (item, index) {
+
+    item.addEventListener("click", function () {
+      openLightbox(index);
+    });
+
+  });
+
+
+  previousButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+
+  nextButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+
+  closeButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    closeLightbox();
+  });
+
+
+  lightbox.addEventListener("click", function (event) {
+
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+
+  });
+
+
+  document.addEventListener("keydown", function (event) {
+
+    if (!lightbox.classList.contains("open")) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showImage(currentIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      showImage(currentIndex + 1);
+    }
+
+  });
+
+});
+</script>
+
+<%- include("partials/footer") %>

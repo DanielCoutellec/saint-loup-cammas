@@ -1,0 +1,162 @@
+<%- include("partials/header", { title }) %>
+
+<main>
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <span class="section-eyebrow light">
+        Recherche
+      </span>
+
+      <h1>Rechercher sur le site</h1>
+
+      <p>
+        Retrouvez rapidement une démarche,
+        une information, une actualité
+        ou un événement.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       RECHERCHE
+  ====================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <form
+        action="/recherche"
+        method="get"
+        class="site-search-page"
+      >
+
+        <label
+          for="siteSearchPage"
+          class="sr-only"
+        >
+          Rechercher sur le site
+        </label>
+
+        <input
+          id="siteSearchPage"
+          type="search"
+          name="q"
+          value="<%= recherche %>"
+          placeholder="Ex. urbanisme, école, déchets, agenda..."
+          autocomplete="off"
+          required
+        >
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Rechercher
+        </button>
+
+      </form>
+
+
+      <% if (recherche) { %>
+
+        <div class="search-results-heading">
+
+          <span class="section-eyebrow">
+            Résultats
+          </span>
+
+          <h2>
+            Recherche :
+            « <%= recherche %> »
+          </h2>
+
+          <p>
+            <%= resultats.length %>
+            résultat<%= resultats.length > 1 ? "s" : "" %>
+          </p>
+
+        </div>
+
+
+        <% if (resultats.length) { %>
+
+          <div class="search-results">
+
+            <% resultats.forEach(resultat => { %>
+
+              <a
+                href="<%= resultat.url %>"
+                class="search-result"
+              >
+
+                <div class="search-result-content">
+
+                  <span class="search-result-type">
+                    <%= resultat.type %>
+                  </span>
+
+                  <h3>
+                    <%= resultat.titre %>
+                  </h3>
+
+                  <p>
+                    <%= resultat.description %>
+                  </p>
+
+                </div>
+
+                <span class="search-result-arrow">
+                  →
+                </span>
+
+              </a>
+
+            <% }) %>
+
+          </div>
+
+        <% } else { %>
+
+          <div class="search-empty">
+
+            <h2>
+              Aucun résultat
+            </h2>
+
+            <p>
+              Aucun contenu ne correspond
+              à votre recherche.
+            </p>
+
+            <p>
+              Essayez avec un autre mot :
+              mairie, urbanisme, école,
+              transports, déchets...
+            </p>
+
+          </div>
+
+        <% } %>
+
+      <% } %>
+
+
+    </div>
+
+  </section>
+
+</main>
+
+<%- include("partials/footer") %>

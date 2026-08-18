@@ -90,55 +90,86 @@
       </a>
 
 
-      <!-- BOUTON MOBILE -->
+      <!-- =====================================
+           BOUTON MOBILE
+      ====================================== -->
 
       <button
         type="button"
         class="menu-toggle"
         aria-label="Ouvrir le menu"
         aria-expanded="false"
-        onclick="
-          const nav = document.querySelector('.main-nav');
-          nav.classList.toggle('open');
-          this.setAttribute(
-            'aria-expanded',
-            nav.classList.contains('open')
-          );
-        "
       >
         ☰
       </button>
 
 
-      <!-- NAVIGATION -->
+      <!-- =====================================
+           NAVIGATION
+      ====================================== -->
 
       <nav class="main-nav">
 
 
-        <!-- ACCUEIL -->
-
-        <a href="/">
-          Accueil
-        </a>
-
-
-        <!-- LA MAIRIE -->
+        <!-- =====================================
+             MAIRIE
+        ====================================== -->
 
         <div class="nav-item">
 
-          <a href="/maire-elus" class="nav-link">
-            La mairie
+          <a href="/mot-du-maire" class="nav-link">
+            Mairie
           </a>
 
           <div class="dropdown-menu">
+
+            <a href="/mot-du-maire">
+              Le mot du maire
+            </a>
 
             <a href="/maire-elus">
               Le maire et les élus
             </a>
 
-            <a href="/conseil-municipal">
-              Conseil municipal
-            </a>
+
+            <!-- CONSEIL MUNICIPAL + SOUS-MENU -->
+
+            <div class="dropdown-submenu">
+
+              <a
+                href="/conseil-municipal"
+                class="dropdown-submenu-link"
+              >
+                Conseil municipal
+                <span>›</span>
+              </a>
+
+              <div class="dropdown-submenu-menu">
+
+                <a href="/conseil-municipal">
+                  Le Conseil municipal
+                </a>
+
+                <a href="/fonctionnement-conseil-municipal">
+                  Fonctionnement
+                </a>
+
+                <a href="/commissions">
+                  Commissions municipales
+                </a>
+
+                <a href="/syndicats">
+                  Syndicats & représentations
+                </a>
+
+                <a href="/comptes-rendus">
+                  Comptes rendus
+                </a>
+
+              </div>
+
+            </div>
+
 
             <a href="/services-municipaux">
               Services municipaux
@@ -146,6 +177,14 @@
 
             <a href="/publications">
               Publications
+            </a>
+
+            <a href="/bulletin-municipal">
+              Bulletin municipal
+            </a>
+
+            <a href="/travaux">
+              Travaux
             </a>
 
             <a href="/marches-publics">
@@ -157,7 +196,9 @@
         </div>
 
 
-        <!-- DÉMARCHES -->
+        <!-- =====================================
+             DÉMARCHES
+        ====================================== -->
 
         <div class="nav-item">
 
@@ -196,7 +237,9 @@
         </div>
 
 
-        <!-- ENFANCE -->
+        <!-- =====================================
+             ENFANCE
+        ====================================== -->
 
         <div class="nav-item">
 
@@ -207,7 +250,7 @@
           <div class="dropdown-menu">
 
             <a href="/ecole">
-              École
+              École Claude Nougaro
             </a>
 
             <a href="/restauration-scolaire">
@@ -215,7 +258,11 @@
             </a>
 
             <a href="/creche">
-              Crèche
+              Crèche Les Bout'Chou
+            </a>
+
+            <a href="/relais-petite-enfance">
+              Relais Petite Enfance
             </a>
 
             <a href="/accueils-loisirs">
@@ -231,7 +278,9 @@
         </div>
 
 
-        <!-- VIE LOCALE -->
+        <!-- =====================================
+             VIE LOCALE
+        ====================================== -->
 
         <div class="nav-item">
 
@@ -245,16 +294,20 @@
               Associations
             </a>
 
-            <a href="/transports">
-              Transports
-            </a>
-
-            <a href="/salles-municipales">
-              Salles municipales
-            </a>
-
             <a href="/commerces-services">
               Commerces & services
+            </a>
+
+            <a href="/entreprises">
+              Entreprises
+            </a>
+
+            <a href="/salle-fetes">
+              Salle des fêtes
+            </a>
+
+            <a href="/commune-patrimoine">
+              Commune & patrimoine
             </a>
 
           </div>
@@ -262,7 +315,161 @@
         </div>
 
 
-        <!-- ACTUALITÉS -->
+        <!-- =====================================
+             VIE QUOTIDIENNE
+        ====================================== -->
+
+        <div class="nav-item">
+
+          <a href="/vie-quotidienne" class="nav-link">
+            Vie quotidienne
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/transports">
+              Transports
+            </a>
+
+            <a href="/pharmacies-garde">
+              Pharmacies de garde
+            </a>
+
+            <a href="/plan-canicule">
+              Plan canicule
+            </a>
+
+            <a href="/numeros-utiles">
+              Numéros utiles
+            </a>
+
+            <a href="/solidarite">
+              Solidarité & action sociale
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             DÉVELOPPEMENT DURABLE
+        ====================================== -->
+
+        <div class="nav-item">
+
+          <a href="/developpement-durable" class="nav-link">
+            Développement durable
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/urbanisme">
+              Urbanisme & PLU
+            </a>
+
+            <a href="/environnement">
+              Environnement & déchets
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             INTERCOMMUNALITÉ
+        ====================================== -->
+
+        <div class="nav-item">
+
+          <a href="/intercommunalite" class="nav-link">
+            Intercommunalité
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/intercommunalite">
+              Coteaux Bellevue
+            </a>
+
+            <a href="/investissements">
+              Investissements
+            </a>
+
+            <a href="/centre-social-emploi">
+              Emploi & insertion
+            </a>
+
+            <a href="/relais-petite-enfance">
+              Relais Petite Enfance
+            </a>
+
+            <a href="/bulletin-intercommunal">
+              L'Écho des Coteaux
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             COMMUNE
+        ====================================== -->
+
+        <div class="nav-item">
+
+          <a href="/commune-patrimoine" class="nav-link">
+            Commune
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/histoire">
+              Histoire
+            </a>
+
+            <a href="/saint-loup-en-images">
+              Saint-Loup en images
+            </a>
+
+            <a href="/demographie">
+              Démographie
+            </a>
+
+            <a href="/blason">
+              Blason
+            </a>
+
+            <a href="/mairie-patrimoine">
+              Mairie
+            </a>
+
+            <a href="/ecole-patrimoine">
+              L'École
+            </a>
+
+            <a href="/eglise">
+              L'Église
+            </a>
+
+            <a href="/autres-lieux">
+              Autres lieux
+            </a>
+
+            <a href="/cartes-postales">
+              Cartes postales
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             ACTUALITÉS
+        ====================================== -->
 
         <div class="nav-item">
 
@@ -289,8 +496,190 @@
         </div>
 
 
+        <!-- =====================================
+             RECHERCHE
+        ====================================== -->
+
+        <div class="nav-search">
+
+          <form
+            action="/recherche"
+            method="get"
+            class="header-search-form"
+          >
+
+            <label
+              for="headerSearch"
+              class="sr-only"
+            >
+              Rechercher sur le site
+            </label>
+
+            <input
+              id="headerSearch"
+              type="search"
+              name="q"
+              placeholder="Rechercher..."
+              autocomplete="off"
+            >
+
+            <button
+              type="submit"
+              class="header-search-button"
+              aria-label="Lancer la recherche"
+            >
+              🔍
+            </button>
+
+          </form>
+
+        </div>
+
+
       </nav>
 
     </div>
 
   </header>
+
+
+  <!-- =====================================
+       NAVIGATION MOBILE
+  ====================================== -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mainNav = document.querySelector(".main-nav");
+
+      if (!menuToggle || !mainNav) {
+        return;
+      }
+
+
+      function isMobileMenu() {
+        return window.innerWidth <= 900;
+      }
+
+
+      /* =====================================
+         MENU PRINCIPAL
+      ====================================== */
+
+      menuToggle.addEventListener("click", function () {
+
+        mainNav.classList.toggle("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          mainNav.classList.contains("open") ? "true" : "false"
+        );
+
+      });
+
+
+      /* =====================================
+         SOUS-MENUS PRINCIPAUX
+      ====================================== */
+
+      document
+        .querySelectorAll(".nav-item > .nav-link")
+        .forEach(function (link) {
+
+          const navItem = link.parentElement;
+
+          const dropdown =
+            navItem.querySelector(":scope > .dropdown-menu");
+
+          if (!dropdown) {
+            return;
+          }
+
+          link.addEventListener("click", function (event) {
+
+            if (!isMobileMenu()) {
+              return;
+            }
+
+            if (!navItem.classList.contains("submenu-open")) {
+
+              event.preventDefault();
+
+              document
+                .querySelectorAll(".nav-item.submenu-open")
+                .forEach(function (item) {
+
+                  if (item !== navItem) {
+                    item.classList.remove("submenu-open");
+                  }
+
+                });
+
+              navItem.classList.add("submenu-open");
+            }
+
+          });
+
+        });
+
+
+      /* =====================================
+         SOUS-MENU CONSEIL MUNICIPAL
+      ====================================== */
+
+      document
+        .querySelectorAll(
+          ".dropdown-submenu > .dropdown-submenu-link"
+        )
+        .forEach(function (link) {
+
+          const submenu = link.parentElement;
+
+          link.addEventListener("click", function (event) {
+
+            if (!isMobileMenu()) {
+              return;
+            }
+
+            if (!submenu.classList.contains("submenu-open")) {
+
+              event.preventDefault();
+              event.stopPropagation();
+
+              submenu.classList.add("submenu-open");
+
+            }
+
+          });
+
+        });
+
+
+      /* =====================================
+         RETOUR DESKTOP
+      ====================================== */
+
+      window.addEventListener("resize", function () {
+
+        if (!isMobileMenu()) {
+
+          mainNav.classList.remove("open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          document
+            .querySelectorAll(".submenu-open")
+            .forEach(function (element) {
+              element.classList.remove("submenu-open");
+            });
+
+        }
+
+      });
+
+    });
+  </script>
